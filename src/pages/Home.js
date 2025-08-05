@@ -19,7 +19,7 @@ const Home = () => {
         <div style={{ fontSize: '2.5rem', color: '#ffffff' }}>
           Benvenuti al
         </div>
-        <div style={{ fontSize: '3rem', fontWeight: 'bold', color: '#00ccff' }}>
+        <div style={{ fontSize: '3.6rem', fontWeight: 'bold', color: '#00ccff' }}>
           SOUL ROCK
         </div>
         <div style={{ fontSize: '2.25rem', color: '#00ccff' }}>
