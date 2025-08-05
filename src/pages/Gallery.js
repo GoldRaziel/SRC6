@@ -1,44 +1,58 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
-const images = [
-  "1. Esterno notte.png",
-  "2. Reception.png",
-  "3. Attesa reception.png",
-  "4. Sala ED209.png",
-  "4. Sala Robocop.png",
-  "5. Sala Cocktail Michael Jackson.png",
-  "6. Bancone Birra T800 Skeleton.png",
-  "7. Cucina a Vista.png",
-  "8. Cucina Hamburger.png",
-  "9. Parete in Jeans.png",
-  "10. Shop Soul Rock.png",
-  "Ologramma Freddie M..png"
-];
+const importAll = (r) => r.keys().map(r);
+const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
 
 const Gallery = () => {
-  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  const openLightbox = (index) => {
+    setPhotoIndex(index);
+    setIsOpen(true);
+  };
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>{t('gallery_title')}</h1>
-      <p>{t('gallery_text')}</p>
+      <h1 style={{ textAlign: 'center', color: '#00ccff', marginBottom: '2rem' }}>Gallery</h1>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '1rem',
-        marginTop: '2rem'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '1rem'
       }}>
-        {images.map((img, i) => (
-          <a key={i} href={require(`../assets/images/${img}`)} target="_blank" rel="noreferrer">
-            <img
-              src={require(`../assets/images/${img}`)}
-              alt={`Gallery ${i}`}
-              style={{ width: '100%', borderRadius: '10px', cursor: 'zoom-in' }}
-            />
-          </a>
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`img-${index}`}
+            onClick={() => openLightbox(index)}
+            style={{
+              width: '100%',
+              height: 'auto',
+              cursor: 'pointer',
+              borderRadius: '8px',
+              boxShadow: '0 0 10px rgba(0,0,0,0.3)'
+            }}
+          />
         ))}
       </div>
+
+      {isOpen && (
+        <Lightbox
+          mainSrc={images[photoIndex]}
+          nextSrc={images[(photoIndex + 1) % images.length]}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex((photoIndex + images.length - 1) % images.length)
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % images.length)
+          }
+        />
+      )}
     </div>
   );
 };
