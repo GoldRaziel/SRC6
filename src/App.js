@@ -8,7 +8,7 @@ import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 import './i18n';
 import { useTranslation } from 'react-i18next';
-import './index.css'; // Assicura che il CSS venga importato
+import './index.css';
 
 function App() {
   const { i18n, t } = useTranslation();
