@@ -11,7 +11,7 @@ const About = () => {
         {t('about_title')}
       </h1>
 
-      <p style={{ fontSize: '1.1rem', maxWidth: '900px', margin: '1.5rem auto', lineHeight: '1.8' }}>
+      <p style={{ fontSize: '1.1rem', maxWidth: '900px', margin: '1.5rem auto', lineHeight: '1.8', whiteSpace: 'pre-line' }}>
         {t('about_text')}
       </p>
 
