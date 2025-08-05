@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Gallery from './pages/Gallery';
 import Investors from './pages/Investors';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
+import Gallery from './components/Gallery'; // ✅ Componente gallery corretto
+
 import './i18n';
 import { useTranslation } from 'react-i18next';
 import './index.css';
@@ -48,10 +49,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/idea" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
         <Route path="/investors" element={<Investors />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} /> {/* ✅ Galleria come componente */}
       </Routes>
     </Router>
   );
