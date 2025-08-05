@@ -7,9 +7,13 @@ const Home = () => {
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-        {t('home_title').split(' ')[0]}<br />
-        <img src={logo} alt="Soul Rock Logo" style={{ maxWidth: '300px', marginTop: '10px', borderRadius: '10px' }} />
+      <img
+        src={logo}
+        alt="Soul Rock Exterior"
+        style={{ maxWidth: '100%', borderRadius: '10px' }}
+      />
+      <h1 style={{ fontSize: '2.5rem', marginTop: '2rem' }}>
+        {t('home_title')}
       </h1>
       <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
         {t('home_text')}
