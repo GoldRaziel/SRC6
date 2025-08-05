@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 const importAll = (r) => r.keys().map(r);
-const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/)).map((src) => ({ src }));
 
 const Gallery = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
 
-  const openLightbox = (index) => {
-    setPhotoIndex(index);
-    setIsOpen(true);
+  const openLightbox = (idx) => {
+    setIndex(idx);
+    setOpen(true);
   };
 
   return (
@@ -22,12 +22,12 @@ const Gallery = () => {
         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
         gap: '1rem'
       }}>
-        {images.map((img, index) => (
+        {images.map((img, idx) => (
           <img
-            key={index}
-            src={img}
-            alt={`img-${index}`}
-            onClick={() => openLightbox(index)}
+            key={idx}
+            src={img.src}
+            alt={`image-${idx}`}
+            onClick={() => openLightbox(idx)}
             style={{
               width: '100%',
               height: 'auto',
@@ -39,18 +39,15 @@ const Gallery = () => {
         ))}
       </div>
 
-      {isOpen && (
+      {open && (
         <Lightbox
-          mainSrc={images[photoIndex]}
-          nextSrc={images[(photoIndex + 1) % images.length]}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }
+          open={open}
+          close={() => setOpen(false)}
+          slides={images}
+          index={index}
+          on={{
+            view: ({ index: i }) => setIndex(i),
+          }}
         />
       )}
     </div>
