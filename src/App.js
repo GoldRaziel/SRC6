@@ -19,14 +19,14 @@ function App() {
   return (
     <Router>
       <nav style={{ background: '#111', padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
-        <div>
-          <Link to="/" style={{ marginRight: 15 }}>{t('home')}</Link>
-          <Link to="/idea" style={{ marginRight: 15 }}>{t('about')}</Link>
-          <Link to="/investors" style={{ marginRight: 15 }}>{t('investors')}</Link>
-          <Link to="/gallery" style={{ marginRight: 15 }}>{t('gallery')}</Link>
-          <Link to="/donate" style={{ marginRight: 15 }}>{t('donate')}</Link>
-          <Link to="/contact">{t('contact')}</Link>
-        </div>
+       <div>
+  <Link to="/" className="nav-button">{t('home')}</Link>
+  <Link to="/idea" className="nav-button">{t('about')}</Link>
+  <Link to="/investors" className="nav-button">{t('investors')}</Link>
+  <Link to="/gallery" className="nav-button">{t('gallery')}</Link>
+  <Link to="/donate" className="nav-button">{t('donate')}</Link>
+  <Link to="/contact" className="nav-button">{t('contact')}</Link>
+</div>
         <div>
           <button onClick={() => changeLanguage('en')}>EN</button>
           <button onClick={() => changeLanguage('it')}>IT</button>
