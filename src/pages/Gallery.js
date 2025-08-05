@@ -21,6 +21,18 @@ const images = [
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [open, setOpen] = useState(false); // ✅ stato per visibilità modale
+
+  const openModal = (index) => {
+    console.log('Image clicked:', index); // Debug opzionale
+    setSelectedIndex(index);
+    setOpen(true);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+    setSelectedIndex(null);
+  };
 
   const showPrev = () => {
     setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -29,8 +41,6 @@ const Gallery = () => {
   const showNext = () => {
     setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
-
-  const closeModal = () => setSelectedIndex(null);
 
   return (
     <div className="gallery-container">
@@ -42,12 +52,12 @@ const Gallery = () => {
             src={img}
             alt={`gallery-${idx}`}
             className="gallery-thumb"
-            onClick={() => setSelectedIndex(idx)}
+            onClick={() => openModal(idx)} // ✅ uso funzione corretta
           />
         ))}
       </div>
 
-      {selectedIndex !== null && (
+      {open && selectedIndex !== null && (
         <div className="lightbox-overlay" onClick={closeModal}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-arrow left" onClick={showPrev}>&lt;</button>
