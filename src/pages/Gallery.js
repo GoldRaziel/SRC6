@@ -12,7 +12,7 @@ import img8 from '../assets/images/7. Cucina a Vista.png';
 import img9 from '../assets/images/8. Cucina Hamburger.png';
 import img10 from '../assets/images/9. Parete in Jeans.png';
 import img11 from '../assets/images/10. Shop Soul Rock.png';
-import img12 from '../assets/images/chatgpt-image-2025-08-02.png'; // ✅ Nuova immagine aggiunta
+import img12 from '../assets/images/chatgpt-image-2025-08-02.png';
 
 const images = [
   img1, img2, img3, img4, img5, img6,
@@ -21,10 +21,9 @@ const images = [
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [open, setOpen] = useState(false); // ✅ stato per visibilità modale
+  const [open, setOpen] = useState(false);
 
   const openModal = (index) => {
-    console.log('Image clicked:', index); // Debug opzionale
     setSelectedIndex(index);
     setOpen(true);
   };
@@ -52,7 +51,7 @@ const Gallery = () => {
             src={img}
             alt={`gallery-${idx}`}
             className="gallery-thumb"
-            onClick={() => openModal(idx)} // ✅ uso funzione corretta
+            onClick={() => openModal(idx)}
           />
         ))}
       </div>
