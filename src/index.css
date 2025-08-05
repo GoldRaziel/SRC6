@@ -1,4 +1,4 @@
-/* Stile base globale */
+/* Stile generale del sito */
 body {
   background-color: #000;
   color: #fff;
@@ -7,43 +7,30 @@ body {
   padding: 0;
 }
 
-/* Link standard */
+/* Stile link standard */
 a {
   color: #00ccff;
   text-decoration: none;
 }
 
-/* Bottoni generici */
-button {
+/* Bottoni generici + NAVBAR */
+button,
+.nav-button {
   background-color: #00ccff;
   color: #000;
   border: none;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 5px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #0099cc;
-}
-
-/* MENU e tasti lingua - stile uniforme */
-.nav-button {
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #fff;
-  padding: 10px 20px;
-  margin-right: 10px;
-  font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
+/* Effetto hover */
+button:hover,
 .nav-button:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #0099cc;
+  color: #fff;
 }
