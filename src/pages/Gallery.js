@@ -12,7 +12,7 @@ import img8 from '../assets/images/7. Cucina a Vista.png';
 import img9 from '../assets/images/8. Cucina Hamburger.png';
 import img10 from '../assets/images/9. Parete in Jeans.png';
 import img11 from '../assets/images/10. Shop Soul Rock.png';
-import img12 from '../assets/images/freddy-ologramma.png';
+import img12 from '../assets/images/chatgpt-image-2025-08-02.png'; // ✅ Nuova immagine aggiunta
 
 const images = [
   img1, img2, img3, img4, img5, img6,
@@ -21,23 +21,16 @@ const images = [
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [open, setOpen] = useState(false);
 
-  const openModal = (index) => {
-    console.log('Image clicked:', index); // Debug
-    setSelectedIndex(index);
-    setOpen(true);
+  const showPrev = () => {
+    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const closeModal = () => setOpen(false);
-
-  const nextImage = () => {
-    setSelectedIndex((selectedIndex + 1) % images.length);
+  const showNext = () => {
+    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  const prevImage = () => {
-    setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
-  };
+  const closeModal = () => setSelectedIndex(null);
 
   return (
     <div className="gallery-container">
@@ -47,19 +40,23 @@ const Gallery = () => {
           <img
             key={idx}
             src={img}
-            alt={`img-${idx}`}
+            alt={`gallery-${idx}`}
             className="gallery-thumb"
-            onClick={() => openModal(idx)}
+            onClick={() => setSelectedIndex(idx)}
           />
         ))}
       </div>
 
-      {open && selectedIndex !== null && (
+      {selectedIndex !== null && (
         <div className="lightbox-overlay" onClick={closeModal}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-arrow left" onClick={prevImage}>&lt;</button>
-            <img src={images[selectedIndex]} alt={`fullscreen-${selectedIndex}`} className="lightbox-img" />
-            <button className="lightbox-arrow right" onClick={nextImage}>&gt;</button>
+            <button className="lightbox-arrow left" onClick={showPrev}>&lt;</button>
+            <img
+              src={images[selectedIndex]}
+              alt={`fullscreen-${selectedIndex}`}
+              className="lightbox-img"
+            />
+            <button className="lightbox-arrow right" onClick={showNext}>&gt;</button>
             <button className="lightbox-close" onClick={closeModal}>×</button>
           </div>
         </div>
