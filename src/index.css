@@ -1,3 +1,4 @@
+/* Stile base globale */
 body {
   background-color: #000;
   color: #fff;
@@ -6,11 +7,13 @@ body {
   padding: 0;
 }
 
+/* Link standard */
 a {
   color: #00ccff;
   text-decoration: none;
 }
 
+/* Bottoni generici */
 button {
   background-color: #00ccff;
   color: #000;
@@ -25,4 +28,22 @@ button {
 
 button:hover {
   background-color: #0099cc;
+}
+
+/* MENU e tasti lingua - stile uniforme */
+.nav-button {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #fff;
+  color: #000;
 }
