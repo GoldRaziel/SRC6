@@ -8,7 +8,7 @@ import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 import './i18n';
 import { useTranslation } from 'react-i18next';
-import './index.css'; // Assicurati che il CSS sia importato
+import './index.css'; // Assicura che il CSS venga importato
 
 function App() {
   const { i18n, t } = useTranslation();
@@ -19,7 +19,17 @@ function App() {
 
   return (
     <Router>
-      <nav style={{ background: '#111', padding: '1rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+      <nav
+        style={{
+          background: '#111',
+          padding: '1rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '10px'
+        }}
+      >
         <div>
           <Link to="/" className="nav-button">{t('home')}</Link>
           <Link to="/idea" className="nav-button">{t('about')}</Link>
