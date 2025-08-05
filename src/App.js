@@ -5,7 +5,7 @@ import About from './pages/About';
 import Investors from './pages/Investors';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
-import Gallery from './components/Gallery'; // ✅ Componente gallery corretto
+import Gallery from './pages/Gallery'; // ✅ Componente gallery corretto
 
 import './i18n';
 import { useTranslation } from 'react-i18next';
