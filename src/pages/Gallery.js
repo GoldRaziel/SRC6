@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
+import './Gallery.css';
 
-// Import immagini (escludendo LOGO.png)
 import img1 from '../assets/images/1. Esterno notte.png';
 import img2 from '../assets/images/2. Reception.png';
 import img3 from '../assets/images/3. Attesa reception.png';
@@ -16,65 +14,43 @@ import img10 from '../assets/images/9. Parete in Jeans.png';
 import img11 from '../assets/images/10. Shop Soul Rock.png';
 import img12 from '../assets/images/freddy-ologramma.png';
 
-// Array delle immagini da passare al lightbox
 const images = [
-  { src: img1 },
-  { src: img2 },
-  { src: img3 },
-  { src: img4 },
-  { src: img5 },
-  { src: img6 },
-  { src: img7 },
-  { src: img8 },
-  { src: img9 },
-  { src: img10 },
-  { src: img11 },
-  { src: img12 }
+  img1, img2, img3, img4, img5, img6,
+  img7, img8, img9, img10, img11, img12
 ];
 
 const Gallery = () => {
-  const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const handleClick = (idx) => {
-    setIndex(idx);
-    setOpen(true);
-  };
+  const openModal = (index) => setSelectedIndex(index);
+  const closeModal = () => setSelectedIndex(null);
+  const nextImage = () => setSelectedIndex((selectedIndex + 1) % images.length);
+  const prevImage = () => setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1 style={{ textAlign: 'center', color: '#00ccff', marginBottom: '2rem' }}>Gallery</h1>
-
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '1rem'
-      }}>
-        {images.map((image, idx) => (
+    <div className="gallery-container">
+      <h1>Gallery</h1>
+      <div className="gallery-grid">
+        {images.map((img, idx) => (
           <img
             key={idx}
-            src={image.src}
+            src={img}
             alt={`img-${idx}`}
-            onClick={() => handleClick(idx)}
-            style={{
-              width: '100%',
-              height: 'auto',
-              cursor: 'pointer',
-              borderRadius: '8px',
-              boxShadow: '0 0 10px rgba(0,0,0,0.3)'
-            }}
+            className="gallery-thumb"
+            onClick={() => openModal(idx)}
           />
         ))}
       </div>
 
-      {open && (
-        <Lightbox
-          open={open}
-          close={() => setOpen(false)}
-          slides={images}
-          index={index}
-          on={{ view: ({ index }) => setIndex(index) }}
-        />
+      {selectedIndex !== null && (
+        <div className="lightbox-overlay" onClick={closeModal}>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button className="lightbox-arrow left" onClick={prevImage}>&lt;</button>
+            <img src={images[selectedIndex]} alt="fullscreen" className="lightbox-img" />
+            <button className="lightbox-arrow right" onClick={nextImage}>&gt;</button>
+            <button className="lightbox-close" onClick={closeModal}>×</button>
+          </div>
+        </div>
       )}
     </div>
   );
