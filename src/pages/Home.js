@@ -14,11 +14,8 @@ const Home = () => {
         style={{ maxWidth: '100%', borderRadius: '10px' }}
       />
 
-      {/* Titolo in tre righe */}
+      {/* Titolo solo con SOUL ROCK + MUSEUM RESTAURANT */}
       <div style={{ marginTop: '2rem', lineHeight: '1.5' }}>
-        <div style={{ fontSize: '2.5rem', color: '#ffffff' }}>
-          Benvenuti al
-        </div>
         <div style={{ fontSize: '3.6rem', fontWeight: 'bold', color: '#00ccff' }}>
           SOUL ROCK
         </div>
