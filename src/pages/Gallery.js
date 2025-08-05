@@ -21,11 +21,23 @@ const images = [
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [open, setOpen] = useState(false);
 
-  const openModal = (index) => setSelectedIndex(index);
-  const closeModal = () => setSelectedIndex(null);
-  const nextImage = () => setSelectedIndex((selectedIndex + 1) % images.length);
-  const prevImage = () => setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+  const openModal = (index) => {
+    console.log('Image clicked:', index); // Debug
+    setSelectedIndex(index);
+    setOpen(true);
+  };
+
+  const closeModal = () => setOpen(false);
+
+  const nextImage = () => {
+    setSelectedIndex((selectedIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+  };
 
   return (
     <div className="gallery-container">
@@ -42,11 +54,11 @@ const Gallery = () => {
         ))}
       </div>
 
-      {selectedIndex !== null && (
+      {open && selectedIndex !== null && (
         <div className="lightbox-overlay" onClick={closeModal}>
-          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-arrow left" onClick={prevImage}>&lt;</button>
-            <img src={images[selectedIndex]} alt="fullscreen" className="lightbox-img" />
+            <img src={images[selectedIndex]} alt={`fullscreen-${selectedIndex}`} className="lightbox-img" />
             <button className="lightbox-arrow right" onClick={nextImage}>&gt;</button>
             <button className="lightbox-close" onClick={closeModal}>×</button>
           </div>
