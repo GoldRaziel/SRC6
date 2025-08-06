@@ -32,8 +32,9 @@
 "donate_copy_unsupported": "Copia non supportata dal browser.",
 "donate_anon_optional": "Dopo la donazione puoi scriverci per ricevere un ringraziamento simbolico. Oppure rimanere anonimo.",
 
-  "ethics_title": "Impegno Etico e Donazioni",
-"ethics_text": "<p style='text-align:justify'>Soul Rock Museum Restaurant non è solo un progetto commerciale...</p> [...continua con il testo completo...]",
+"ethics": "Etica",
+"ethics_title": "Impegno Etico e Donazioni",
+"ethics_text": "<p style='text-align:justify'><strong>Soul Rock Museum Restaurant</strong> non è solo un progetto commerciale, ma una visione che vuole lasciare un impatto positivo nel mondo reale.</p><p style='text-align:justify'>Per questo motivo, ci impegniamo a destinare una parte delle donazioni ricevute – e in futuro anche una percentuale degli utili – a iniziative educative, artistiche o umanitarie rivolte ai bambini e ai giovani.</p><p style='text-align:justify'>Stiamo valutando con attenzione quale organizzazione benefica sia più adatta a collaborare con noi, con criteri di <strong>trasparenza, eticità e impatto reale</strong>.</p><p style='text-align:justify'>Non vogliamo fare beneficenza di facciata, ma creare valore vero. Per questo motivo, una volta selezionata l’associazione, condivideremo qui il nome, i dettagli della collaborazione e – quando possibile – prove concrete dell’impegno mantenuto.</p><p style='text-align:justify; margin-top:2rem;'>Chi dona a <strong>Soul Rock</strong> contribuisce anche a costruire un progetto con un’anima.</p>",
 
   "contact_title": "Contattaci",
   "contact_text": "Scrivici per informazioni, collaborazioni o supporto al lancio."
