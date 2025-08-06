@@ -29,31 +29,9 @@ const Home = () => {
         {t('home_text')}
       </p>
 
-      {/* Pulsanti corretti */}
+      {/* Pulsanti (se vorrai aggiungerne altri in futuro) */}
       <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-      
-
-        {/* Tasto DONA ORA collegato direttamente a Stripe */}
-        <a
-          href="https://donate.stripe.com/aFafZi6HZcn76m8fHJfjG01"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button
-            style={{
-              fontSize: '1.2rem',
-              padding: '0.8rem 1.5rem',
-              backgroundColor: '#00ccff',
-              color: '#000',
-              border: 'none',
-              borderRadius: '8px',
-              fontWeight: 'bold',
-              cursor: 'pointer'
-            }}
-          >
-            {t('home_cta_donate')}
-          </button>
-        </a>
+        {/* Nessun tasto per ora */}
       </div>
     </div>
   );
