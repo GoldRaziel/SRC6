@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import image from '../assets/images/1. Esterno notte.png';
+import image from '../assets/images/1.Esterno-notte.png';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -25,17 +25,21 @@ const Home = () => {
       </div>
 
       {/* Frase */}
-      <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
+      <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', marginTop: '1rem' }}>
         {t('home_text')}
       </p>
 
       {/* Pulsanti */}
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
         <a href="/investors">
-          <button style={{ fontSize: '1.2rem' }}>{t('home_cta_discover')}</button>
+          <button style={{ fontSize: '1.2rem', padding: '0.5rem 1.2rem' }}>
+            {t('home_cta_discover')}
+          </button>
         </a>
         <a href="/donate">
-          <button style={{ fontSize: '1.2rem' }}>{t('home_cta_donate')}</button>
+          <button style={{ fontSize: '1.2rem', padding: '0.5rem 1.2rem' }}>
+            {t('home_cta_donate')}
+          </button>
         </a>
       </div>
     </div>
