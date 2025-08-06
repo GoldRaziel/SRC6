@@ -16,8 +16,7 @@ function App() {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr'; // ✅ imposta la direzione
-    setMenuOpen(false);
+    setMenuOpen(false); // chiude il menu mobile dopo cambio lingua
   };
 
   return (
@@ -69,9 +68,9 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
 
-      {/* STILE INLINE (può essere spostato in index.css) */}
+      {/* STILE INLINE (o trasferiscilo in CSS esterno) */}
       <style>
-        {`
+        {
           .navbar {
             background: #111;
             padding: 1rem;
@@ -140,7 +139,7 @@ function App() {
               margin-top: 1rem;
             }
           }
-        `}
+        }
       </style>
     </Router>
   );
