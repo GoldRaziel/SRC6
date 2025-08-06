@@ -16,7 +16,7 @@ const Home = () => {
 
       {/* Titolo SOUL ROCK */}
       <div style={{ marginTop: '2rem', lineHeight: '1.5' }}>
-        <div style={{ fontSize: '3.6rem', fontWeight: 'bold', color: '#00ccff' }}>
+        <div style={{ fontSize: '4.32rem', fontWeight: 'bold', color: '#00ccff' }}>
           SOUL ROCK
         </div>
         <div style={{ fontSize: '2.25rem', color: '#00ccff' }}>
