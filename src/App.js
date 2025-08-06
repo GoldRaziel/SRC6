@@ -16,33 +16,49 @@ function App() {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setMenuOpen(false); // chiude il menu su mobile
+    setMenuOpen(false); // chiude il menu mobile dopo cambio lingua
   };
 
   return (
     <Router>
-      {/* NAVBAR responsive */}
       <nav className="navbar">
-        {/* Hamburger solo su mobile */}
-        <div className="navbar-hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
+        {/* DESKTOP MENU */}
+        <div className="navbar-desktop">
+          <div className="nav-links">
+            <Link to="/" className="nav-button">{t('home')}</Link>
+            <Link to="/idea" className="nav-button">{t('about')}</Link>
+            <Link to="/investors" className="nav-button">{t('investors')}</Link>
+            <Link to="/gallery" className="nav-button">{t('gallery')}</Link>
+            <Link to="/donate" className="nav-button">{t('donate')}</Link>
+            <Link to="/contact" className="nav-button">{t('contact')}</Link>
+          </div>
+          <div className="nav-lang">
+            <button className="nav-button" onClick={() => changeLanguage('en')}>EN</button>
+            <button className="nav-button" onClick={() => changeLanguage('it')}>IT</button>
+            <button className="nav-button" onClick={() => changeLanguage('ar')}>AR</button>
+          </div>
         </div>
 
-        {/* Menu di navigazione */}
-        <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          <Link to="/" className="nav-button" onClick={() => setMenuOpen(false)}>{t('home')}</Link>
-          <Link to="/idea" className="nav-button" onClick={() => setMenuOpen(false)}>{t('about')}</Link>
-          <Link to="/investors" className="nav-button" onClick={() => setMenuOpen(false)}>{t('investors')}</Link>
-          <Link to="/gallery" className="nav-button" onClick={() => setMenuOpen(false)}>{t('gallery')}</Link>
-          <Link to="/donate" className="nav-button" onClick={() => setMenuOpen(false)}>{t('donate')}</Link>
-          <Link to="/contact" className="nav-button" onClick={() => setMenuOpen(false)}>{t('contact')}</Link>
-          <button className="nav-button" onClick={() => changeLanguage('en')}>EN</button>
-          <button className="nav-button" onClick={() => changeLanguage('it')}>IT</button>
-          <button className="nav-button" onClick={() => changeLanguage('ar')}>AR</button>
+        {/* MOBILE HAMBURGER */}
+        <div className="navbar-mobile">
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>☰</div>
+          {menuOpen && (
+            <div className="mobile-menu">
+              <Link to="/" className="nav-button" onClick={() => setMenuOpen(false)}>{t('home')}</Link>
+              <Link to="/idea" className="nav-button" onClick={() => setMenuOpen(false)}>{t('about')}</Link>
+              <Link to="/investors" className="nav-button" onClick={() => setMenuOpen(false)}>{t('investors')}</Link>
+              <Link to="/gallery" className="nav-button" onClick={() => setMenuOpen(false)}>{t('gallery')}</Link>
+              <Link to="/donate" className="nav-button" onClick={() => setMenuOpen(false)}>{t('donate')}</Link>
+              <Link to="/contact" className="nav-button" onClick={() => setMenuOpen(false)}>{t('contact')}</Link>
+              <button className="nav-button" onClick={() => changeLanguage('en')}>EN</button>
+              <button className="nav-button" onClick={() => changeLanguage('it')}>IT</button>
+              <button className="nav-button" onClick={() => changeLanguage('ar')}>AR</button>
+            </div>
+          )}
         </div>
       </nav>
 
-      {/* ROUTES */}
+      {/* ROTTE */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/idea" element={<About />} />
@@ -52,75 +68,75 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
 
-      {/* STILE RESPONSIVE */}
+      {/* STILE INLINE (o trasferiscilo in CSS esterno) */}
       <style>
         {`
           .navbar {
             background: #111;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
             padding: 1rem;
-            flex-wrap: wrap;
-            position: relative;
           }
 
-          .navbar-hamburger {
-            display: none;
-            font-size: 2rem;
-            color: #00ccff;
-            cursor: pointer;
-          }
-
-          .navbar-links {
+          .navbar-desktop {
             display: flex;
-            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
+          }
+
+          .nav-links {
+            display: flex;
+            gap: 10px;
+          }
+
+          .nav-lang {
+            display: flex;
+            gap: 10px;
+          }
+
+          .navbar-mobile {
+            display: none;
           }
 
           .nav-button {
-            background: none;
+            background: #00ccff;
+            color: #000;
             border: none;
-            color: white;
+            padding: 0.5rem 1rem;
             font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
             font-size: 1rem;
             cursor: pointer;
-            text-decoration: none;
           }
 
           .nav-button:hover {
-            color: #00ccff;
+            background: #00aacc;
           }
 
           @media (max-width: 768px) {
-            .navbar-hamburger {
-              display: block;
-              position: absolute;
-              top: 1.2rem;
-              right: 1rem;
-            }
-
-            .navbar-links {
+            .navbar-desktop {
               display: none;
-              flex-direction: column;
-              width: 100%;
-              margin-top: 3rem;
-              background: #111;
-              padding: 1rem 0;
-              position: absolute;
-              top: 60px;
-              left: 0;
-              z-index: 999;
             }
 
-            .navbar-links.open {
+            .navbar-mobile {
+              display: block;
+              position: relative;
+            }
+
+            .hamburger {
+              font-size: 2rem;
+              color: #00ccff;
+              cursor: pointer;
+              text-align: right;
+            }
+
+            .mobile-menu {
               display: flex;
-            }
-
-            .nav-button {
-              width: 100%;
-              text-align: center;
-              padding: 0.75rem 0;
+              flex-direction: column;
+              background: #111;
+              gap: 10px;
+              padding: 1rem 0;
+              margin-top: 1rem;
             }
           }
         `}
