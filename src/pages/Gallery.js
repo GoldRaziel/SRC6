@@ -25,6 +25,7 @@ const Gallery = () => {
   return (
     <div className="gallery-container">
       <h2 className="gallery-title">Gallery</h2>
+
       <div className="gallery-grid">
         {images.map((src, index) => (
           <img
@@ -39,6 +40,7 @@ const Gallery = () => {
 
       {selectedImage && (
         <div className="overlay" onClick={() => setSelectedImage(null)}>
+          <span className="close-button" onClick={() => setSelectedImage(null)}>&times;</span>
           <img src={selectedImage} alt="fullscreen" className="fullscreen-image" />
         </div>
       )}
