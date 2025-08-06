@@ -17,6 +17,7 @@ function App() {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setMenuOpen(false); // chiude il menu mobile dopo cambio lingua
+    // ❌ Non impostiamo RTL (su tua richiesta)
   };
 
   return (
@@ -68,79 +69,77 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
 
-      {/* STILE INLINE (o trasferiscilo in CSS esterno) */}
-      <style>
-        {
-          .navbar {
-            background: #111;
-            padding: 1rem;
-          }
+      {/* STILE INLINE (valido per JSX e Netlify) */}
+      <style>{`
+        .navbar {
+          background: #111;
+          padding: 1rem;
+        }
 
+        .navbar-desktop {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 10px;
+        }
+
+        .nav-lang {
+          display: flex;
+          gap: 10px;
+        }
+
+        .navbar-mobile {
+          display: none;
+        }
+
+        .nav-button {
+          background: #00ccff;
+          color: #000;
+          border: none;
+          padding: 0.5rem 1rem;
+          font-weight: bold;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+
+        .nav-button:hover {
+          background: #00aacc;
+        }
+
+        @media (max-width: 768px) {
           .navbar-desktop {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-          }
-
-          .nav-links {
-            display: flex;
-            gap: 10px;
-          }
-
-          .nav-lang {
-            display: flex;
-            gap: 10px;
-          }
-
-          .navbar-mobile {
             display: none;
           }
 
-          .nav-button {
-            background: #00ccff;
-            color: #000;
-            border: none;
-            padding: 0.5rem 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1rem;
+          .navbar-mobile {
+            display: block;
+            position: relative;
+          }
+
+          .hamburger {
+            font-size: 2rem;
+            color: #00ccff;
             cursor: pointer;
+            text-align: right;
           }
 
-          .nav-button:hover {
-            background: #00aacc;
-          }
-
-          @media (max-width: 768px) {
-            .navbar-desktop {
-              display: none;
-            }
-
-            .navbar-mobile {
-              display: block;
-              position: relative;
-            }
-
-            .hamburger {
-              font-size: 2rem;
-              color: #00ccff;
-              cursor: pointer;
-              text-align: right;
-            }
-
-            .mobile-menu {
-              display: flex;
-              flex-direction: column;
-              background: #111;
-              gap: 10px;
-              padding: 1rem 0;
-              margin-top: 1rem;
-            }
+          .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            background: #111;
+            gap: 10px;
+            padding: 1rem 0;
+            margin-top: 1rem;
           }
         }
-      </style>
+      `}</style>
     </Router>
   );
 }
