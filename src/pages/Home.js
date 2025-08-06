@@ -14,7 +14,7 @@ const Home = () => {
         style={{ maxWidth: '100%', borderRadius: '10px' }}
       />
 
-      {/* Titolo solo con SOUL ROCK + MUSEUM RESTAURANT */}
+      {/* Titolo SOUL ROCK */}
       <div style={{ marginTop: '2rem', lineHeight: '1.5' }}>
         <div style={{ fontSize: '3.6rem', fontWeight: 'bold', color: '#00ccff' }}>
           SOUL ROCK
@@ -24,20 +24,49 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Frase */}
-      <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', marginTop: '1rem' }}>
+      {/* Frase introduttiva */}
+      <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', marginTop: '1rem', color: '#ffffff' }}>
         {t('home_text')}
       </p>
 
-      {/* Pulsanti */}
-      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-        <a href="/investors">
-          <button style={{ fontSize: '1.2rem', padding: '0.5rem 1.2rem' }}>
+      {/* Pulsanti corretti */}
+      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {/* Tasto SCOPRI DI PIÙ collegato alla pagina "Chi siamo" */}
+        <a href="/about">
+          <button
+            style={{
+              fontSize: '1.2rem',
+              padding: '0.8rem 1.5rem',
+              backgroundColor: '#00ccff',
+              color: '#000',
+              border: 'none',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              cursor: 'pointer'
+            }}
+          >
             {t('home_cta_discover')}
           </button>
         </a>
-        <a href="/donate">
-          <button style={{ fontSize: '1.2rem', padding: '0.5rem 1.2rem' }}>
+
+        {/* Tasto DONA ORA collegato direttamente a Stripe */}
+        <a
+          href="https://donate.stripe.com/aFafZi6HZcn76m8fHJfjG01"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button
+            style={{
+              fontSize: '1.2rem',
+              padding: '0.8rem 1.5rem',
+              backgroundColor: '#00ccff',
+              color: '#000',
+              border: 'none',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              cursor: 'pointer'
+            }}
+          >
             {t('home_cta_donate')}
           </button>
         </a>
