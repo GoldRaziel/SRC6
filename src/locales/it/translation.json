@@ -31,6 +31,9 @@
 "donate_copy_unsupported": "Copia non supportata dal browser.",
 "donate_anon_optional": "Dopo la donazione puoi scriverci per ricevere un ringraziamento simbolico. Oppure rimanere anonimo.",
 
+  "ethics_title": "Impegno Etico e Donazioni",
+"ethics_text": "<p style='text-align:justify'>Soul Rock Museum Restaurant non è solo un progetto commerciale...</p> [...continua con il testo completo...]",
+
   "contact_title": "Contattaci",
   "contact_text": "Scrivici per informazioni, collaborazioni o supporto al lancio."
 }
