@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import freddy from '../assets/images/freddy-ologramma.png';
+import freddy from '../assets/images/Ologramma Freddie M..png'; // ✅ nome esatto del file
 
 const About = () => {
   const { t } = useTranslation();
@@ -27,7 +27,7 @@ const About = () => {
       {/* Immagine Freddy ologramma */}
       <img
         src={freddy}
-        alt="Freddy Mercury Ologramma"
+        alt="Freddie Mercury Ologramma"
         style={{
           maxWidth: '400px',
           marginTop: '2rem',
