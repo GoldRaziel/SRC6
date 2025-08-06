@@ -16,19 +16,16 @@ function App() {
   const [dir, setDir] = useState('ltr');
 
   useEffect(() => {
-    // Imposta RTL solo se lingua è arabo
     setDir(i18n.language === 'ar' ? 'rtl' : 'ltr');
   }, [i18n.language]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setMenuOpen(false); // chiude menu mobile
+    setMenuOpen(false);
   };
 
   return (
-    <Router>
-  <div lang={i18n.language}>
-
+    <div lang={i18n.language}>
       <Router>
         <nav className="navbar">
           {/* DESKTOP MENU */}
@@ -67,18 +64,20 @@ function App() {
           </div>
         </nav>
 
-        {/* ROTTE */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/idea" element={<About />} />
-          <Route path="/investors" element={<Investors />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
-        </Routes>
+        {/* ROTTE - contenuto testuale con direzione RTL solo per l'arabo */}
+        <div dir={dir}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/idea" element={<About />} />
+            <Route path="/investors" element={<Investors />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
+          </Routes>
+        </div>
       </Router>
 
-      {/* STILE INLINE (valido per JSX e Netlify) */}
+      {/* STILE INLINE */}
       <style>{`
         .navbar {
           background: #111;
