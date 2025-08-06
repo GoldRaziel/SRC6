@@ -1,18 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import stripeLogo from '../assets/images/stripe-logo.png'; // assicurati che questo file esista
+import stripeLogo from '../assets/images/stripe-logo.png';
+
+import btcQR from '../assets/images/BTC_wallet_qr_resized.png';
+import ethQR from '../assets/images/ETH_wallet_qr_resized.png';
+import solQR from '../assets/images/SOL_wallet_qr_resized.png';
 
 const Donate = () => {
   const { t } = useTranslation();
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      {/* Titolo azzurro */}
+      {/* Titolo principale */}
       <h1 style={{ color: '#00ccff', fontSize: '2.5rem' }}>
         {t('donate_title')}
       </h1>
 
-      {/* Testo da translation.json con HTML */}
+      {/* Testo descrizione donazione */}
       <p
         style={{
           fontSize: '1.2rem',
@@ -47,8 +51,6 @@ const Donate = () => {
             Dona ora con Stripe
           </button>
         </a>
-
-        {/* Logo Stripe */}
         <div style={{ marginTop: '1rem' }}>
           <img
             src={stripeLogo}
@@ -57,6 +59,111 @@ const Donate = () => {
           />
         </div>
       </div>
+
+      {/* Sezione criptovalute */}
+      <h2 style={{ color: '#00ccff', marginTop: '3rem' }}>
+        Donazioni anonime in criptovaluta
+      </h2>
+      <p
+        style={{
+          fontSize: '1.1rem',
+          maxWidth: '800px',
+          margin: '1rem auto',
+          lineHeight: '1.8',
+          color: '#ffffff',
+        }}
+      >
+        Per chi desidera supportare <strong style={{ color: '#00ccff' }}>SOUL ROCK</strong> in forma
+        anonima o decentralizzata, è possibile donare direttamente tramite criptovalute. Nessun dato personale
+        è richiesto e la transazione è registrata solo sulla blockchain.
+      </p>
+
+      {/* Blocchi Crypto */}
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '2rem',
+          marginTop: '2rem',
+        }}
+      >
+        {/* BTC */}
+        <div style={{ textAlign: 'center', maxWidth: '220px' }}>
+          <img
+            src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026"
+            alt="Bitcoin Logo"
+            style={{ width: '40px', marginBottom: '0.5rem' }}
+          />
+          <h4 style={{ color: '#ffffff' }}>Bitcoin (BTC)</h4>
+          <img src={btcQR} alt="QR BTC" style={{ width: '150px', height: '150px' }} />
+          <p
+            style={{
+              fontSize: '0.9rem',
+              wordWrap: 'break-word',
+              color: '#cccccc',
+              marginTop: '0.5rem',
+            }}
+          >
+            3KXbnziZABPwtNeD8pvPdSKTL1ZnpbtL2V
+          </p>
+        </div>
+
+        {/* ETH */}
+        <div style={{ textAlign: 'center', maxWidth: '220px' }}>
+          <img
+            src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=026"
+            alt="Ethereum Logo"
+            style={{ width: '40px', marginBottom: '0.5rem' }}
+          />
+          <h4 style={{ color: '#ffffff' }}>Ethereum (ETH)</h4>
+          <img src={ethQR} alt="QR ETH" style={{ width: '150px', height: '150px' }} />
+          <p
+            style={{
+              fontSize: '0.9rem',
+              wordWrap: 'break-word',
+              color: '#cccccc',
+              marginTop: '0.5rem',
+            }}
+          >
+            0x18A515e95ae79D25A06C3b75B1EFeE2049cEfC72
+          </p>
+        </div>
+
+        {/* SOL */}
+        <div style={{ textAlign: 'center', maxWidth: '220px' }}>
+          <img
+            src="https://cryptologos.cc/logos/solana-sol-logo.png?v=026"
+            alt="Solana Logo"
+            style={{ width: '40px', marginBottom: '0.5rem' }}
+          />
+          <h4 style={{ color: '#ffffff' }}>Solana (SOL)</h4>
+          <img src={solQR} alt="QR SOL" style={{ width: '150px', height: '150px' }} />
+          <p
+            style={{
+              fontSize: '0.9rem',
+              wordWrap: 'break-word',
+              color: '#cccccc',
+              marginTop: '0.5rem',
+            }}
+          >
+            388xenffgiuHxkWBisWN3MqUbt7KSKVV7YR9cNxJScSa
+          </p>
+        </div>
+      </div>
+
+      <p
+        style={{
+          fontSize: '1rem',
+          maxWidth: '800px',
+          margin: '2rem auto 0',
+          lineHeight: '1.8',
+          color: '#ffffff',
+        }}
+      >
+        Una volta completata la donazione, puoi (facoltativamente) scriverci per ricevere un ringraziamento
+        simbolico. In alternativa, puoi rimanere completamente anonimo.
+      </p>
     </div>
   );
 };
