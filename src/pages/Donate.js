@@ -9,11 +9,10 @@ import solQR from '../assets/images/SOL_wallet_qr_resized.png';
 const Donate = () => {
   const { t } = useTranslation();
 
-  // Funzione sicura per copiare negli appunti
   const copyToClipboard = (text) => {
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text)
-        .then(() => alert('Indirizzo copiato negli appunti!'))
+        .then(() => alert(t('donate_copy_success')))
         .catch(() => fallbackCopy(text));
     } else {
       fallbackCopy(text);
@@ -31,25 +30,17 @@ const Donate = () => {
     textArea.select();
     try {
       const success = document.execCommand('copy');
-      if (success) {
-        alert('Indirizzo copiato negli appunti!');
-      } else {
-        alert('Errore nella copia. Copia manualmente.');
-      }
-    } catch (err) {
-      alert('Copia non supportata dal browser.');
+      alert(success ? t('donate_copy_success') : t('donate_copy_error'));
+    } catch {
+      alert(t('donate_copy_unsupported'));
     }
     document.body.removeChild(textArea);
   };
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      {/* Titolo principale */}
-      <h1 style={{ color: '#00ccff', fontSize: '2.5rem' }}>
-        {t('donate_title')}
-      </h1>
+      <h1 style={{ color: '#00ccff', fontSize: '2.5rem' }}>{t('donate_title')}</h1>
 
-      {/* Testo descrizione donazione */}
       <p
         style={{
           fontSize: '1.2rem',
@@ -61,7 +52,7 @@ const Donate = () => {
         dangerouslySetInnerHTML={{ __html: t('donate_text') }}
       />
 
-      {/* Bottone Stripe */}
+      {/* BOTTONE STRIPE */}
       <div style={{ marginTop: '2rem' }}>
         <a
           href="https://donate.stripe.com/aFafZi6HZcn76m8fHJfjG01"
@@ -81,7 +72,7 @@ const Donate = () => {
               transition: '0.3s',
             }}
           >
-            Dona ora con Stripe
+            {t('donate_button_stripe')}
           </button>
         </a>
         <div style={{ marginTop: '1rem' }}>
@@ -93,9 +84,9 @@ const Donate = () => {
         </div>
       </div>
 
-      {/* Sezione criptovalute */}
+      {/* CRYPTO TITLE + TEXT */}
       <h2 style={{ color: '#00ccff', marginTop: '3rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
-        Donazioni anonime in criptovaluta
+        {t('donate_crypto_title')}
       </h2>
       <p
         style={{
@@ -106,12 +97,10 @@ const Donate = () => {
           color: '#ffffff',
         }}
       >
-        Per chi desidera supportare <strong style={{ color: '#00ccff' }}>SOUL ROCK</strong> in forma
-        anonima o decentralizzata, è possibile donare direttamente tramite criptovalute. Nessun dato personale
-        è richiesto e la transazione è registrata solo sulla blockchain.
+        {t('donate_crypto_text')}
       </p>
 
-      {/* Blocchi Crypto */}
+      {/* CRYPTO BLOCKS */}
       <div
         style={{
           display: 'flex',
@@ -139,7 +128,7 @@ const Donate = () => {
               fontWeight: 'bold',
             }}
           >
-            Copia indirizzo
+            {t('donate_copy_button')}
           </button>
         </div>
 
@@ -161,7 +150,7 @@ const Donate = () => {
               fontWeight: 'bold',
             }}
           >
-            Copia indirizzo
+            {t('donate_copy_button')}
           </button>
         </div>
 
@@ -183,11 +172,12 @@ const Donate = () => {
               fontWeight: 'bold',
             }}
           >
-            Copia indirizzo
+            {t('donate_copy_button')}
           </button>
         </div>
       </div>
 
+      {/* Testo finale */}
       <p
         style={{
           fontSize: '1rem',
@@ -197,8 +187,7 @@ const Donate = () => {
           color: '#ffffff',
         }}
       >
-        Una volta completata la donazione, puoi (facoltativamente) scriverci per ricevere un ringraziamento
-        simbolico. In alternativa, puoi rimanere completamente anonimo.
+        {t('donate_anon_optional')}
       </p>
     </div>
   );
