@@ -21,8 +21,16 @@
   "gallery_title": "المعرض",
   "gallery_text": "استكشف فكرتنا من خلال صور واقعية لأجواء <strong style='color:#00ccff'>SOUL ROCK</strong>.",
 
-  "donate_title": "ادعم المشروع",
-  "donate_text": "انضم إلينا في إنشاء مكان فريد من نوعه حيث تعود مشاعر الماضي للحياة من خلال الموسيقى والفن والتكنولوجيا. لا تكن مجرد مشاهد: <strong>كن جزءًا من مشروع سيتحدث عنه العالم كله.</strong><br /><br />يمكنك المساهمة بأمان وراحة من خلال خدمة Stripe.",
+  "donate_title": "ادعمنا",
+"donate_text": "إذا كنت ترغب في دعم مشروع <strong style='color:#00ccff'>Soul Rock Museum Restaurant</strong>، يمكنك التبرع بحرية. كل مساهمة تقربنا من الافتتاح.",
+"donate_button_stripe": "تبرع عبر Stripe",
+"donate_crypto_title": "تبرعات العملات المشفرة المجهولة",
+"donate_crypto_text": "يمكنك التبرع باستخدام العملات المشفرة مثل BTC أو ETH أو SOL بطريقة مجهولة أو لامركزية.",
+"donate_copy_button": "نسخ العنوان",
+"donate_copy_success": "تم نسخ العنوان!",
+"donate_copy_error": "فشل النسخ. يرجى النسخ يدويًا.",
+"donate_copy_unsupported": "النسخ غير مدعوم في هذا المتصفح.",
+"donate_anon_optional": "بعد التبرع، يمكنك التواصل معنا للحصول على شكر رمزي. أو البقاء مجهولًا تمامًا.",
 
   "crypto_donation_title": "تبرعات العملات المشفرة المجهولة",
   "crypto_donation_text": "إذا كنت تفضل دعم <strong style='color:#00ccff'>SOUL ROCK</strong> بشكل خاص أو مجهول، يمكنك التبرع مباشرةً باستخدام العملات المشفرة. لا حاجة لأي بيانات شخصية، والمعاملة تُسجل فقط على البلوكشين.",
