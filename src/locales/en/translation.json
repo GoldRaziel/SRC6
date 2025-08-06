@@ -31,6 +31,9 @@
 "donate_copy_unsupported": "Copy not supported by this browser.",
 "donate_anon_optional": "After donating, you may contact us for a symbolic thank-you. Or remain completely anonymous.",
 
+  "ethics_title": "Ethical Commitment and Donations",
+"ethics_text": "<p style='text-align:justify'>Soul Rock Museum Restaurant is not just a commercial project...</p> [...continua...]",
+
   "contact_title": "Contact Us",
   "contact_text": "Write to us at: <strong>info.soulrockcafe@gmail.com</strong>"
 }
