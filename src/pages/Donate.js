@@ -9,6 +9,12 @@ import solQR from '../assets/images/SOL_wallet_qr_resized.png';
 const Donate = () => {
   const { t } = useTranslation();
 
+  // Funzione per copiare wallet negli appunti
+  const copyToClipboard = (wallet) => {
+    navigator.clipboard.writeText(wallet);
+    alert('Indirizzo copiato negli appunti!');
+  };
+
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
       {/* Titolo principale */}
@@ -61,7 +67,7 @@ const Donate = () => {
       </div>
 
       {/* Sezione criptovalute */}
-      <h2 style={{ color: '#00ccff', marginTop: '3rem' }}>
+      <h2 style={{ color: '#00ccff', marginTop: '3rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
         Donazioni anonime in criptovaluta
       </h2>
       <p
@@ -90,65 +96,68 @@ const Donate = () => {
       >
         {/* BTC */}
         <div style={{ textAlign: 'center', maxWidth: '220px' }}>
-          <img
-            src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026"
-            alt="Bitcoin Logo"
-            style={{ width: '40px', marginBottom: '0.5rem' }}
-          />
-          <h4 style={{ color: '#ffffff' }}>Bitcoin (BTC)</h4>
+          <h3 style={{ color: '#00ccff', fontWeight: 'bold', textTransform: 'uppercase' }}>BTC</h3>
           <img src={btcQR} alt="QR BTC" style={{ width: '150px', height: '150px' }} />
-          <p
+          <button
+            onClick={() => copyToClipboard('3KXbnziZABPwtNeD8pvPdSKTL1ZnpbtL2V')}
             style={{
-              fontSize: '0.9rem',
-              wordWrap: 'break-word',
-              color: '#cccccc',
               marginTop: '0.5rem',
+              padding: '0.5rem 1rem',
+              fontSize: '0.9rem',
+              borderRadius: '6px',
+              backgroundColor: '#00ccff',
+              color: '#000',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 'bold',
             }}
           >
-            3KXbnziZABPwtNeD8pvPdSKTL1ZnpbtL2V
-          </p>
+            Copia indirizzo
+          </button>
         </div>
 
         {/* ETH */}
         <div style={{ textAlign: 'center', maxWidth: '220px' }}>
-          <img
-            src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=026"
-            alt="Ethereum Logo"
-            style={{ width: '40px', marginBottom: '0.5rem' }}
-          />
-          <h4 style={{ color: '#ffffff' }}>Ethereum (ETH)</h4>
+          <h3 style={{ color: '#00ccff', fontWeight: 'bold', textTransform: 'uppercase' }}>ETH</h3>
           <img src={ethQR} alt="QR ETH" style={{ width: '150px', height: '150px' }} />
-          <p
+          <button
+            onClick={() => copyToClipboard('0x18A515e95ae79D25A06C3b75B1EFeE2049cEfC72')}
             style={{
-              fontSize: '0.9rem',
-              wordWrap: 'break-word',
-              color: '#cccccc',
               marginTop: '0.5rem',
+              padding: '0.5rem 1rem',
+              fontSize: '0.9rem',
+              borderRadius: '6px',
+              backgroundColor: '#00ccff',
+              color: '#000',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 'bold',
             }}
           >
-            0x18A515e95ae79D25A06C3b75B1EFeE2049cEfC72
-          </p>
+            Copia indirizzo
+          </button>
         </div>
 
         {/* SOL */}
         <div style={{ textAlign: 'center', maxWidth: '220px' }}>
-          <img
-            src="https://cryptologos.cc/logos/solana-sol-logo.png?v=026"
-            alt="Solana Logo"
-            style={{ width: '40px', marginBottom: '0.5rem' }}
-          />
-          <h4 style={{ color: '#ffffff' }}>Solana (SOL)</h4>
+          <h3 style={{ color: '#00ccff', fontWeight: 'bold', textTransform: 'uppercase' }}>SOL</h3>
           <img src={solQR} alt="QR SOL" style={{ width: '150px', height: '150px' }} />
-          <p
+          <button
+            onClick={() => copyToClipboard('388xenffgiuHxkWBisWN3MqUbt7KSKVV7YR9cNxJScSa')}
             style={{
-              fontSize: '0.9rem',
-              wordWrap: 'break-word',
-              color: '#cccccc',
               marginTop: '0.5rem',
+              padding: '0.5rem 1rem',
+              fontSize: '0.9rem',
+              borderRadius: '6px',
+              backgroundColor: '#00ccff',
+              color: '#000',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 'bold',
             }}
           >
-            388xenffgiuHxkWBisWN3MqUbt7KSKVV7YR9cNxJScSa
-          </p>
+            Copia indirizzo
+          </button>
         </div>
       </div>
 
