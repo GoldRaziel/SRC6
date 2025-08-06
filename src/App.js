@@ -5,6 +5,7 @@ import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Investors from './pages/Investors';
 import Donate from './pages/Donate';
+import Ethics from './pages/Ethics';
 import Contact from './pages/Contact';
 import './i18n';
 import { useTranslation } from 'react-i18next';
@@ -71,6 +72,7 @@ function App() {
             <Route path="/idea" element={<About />} />
             <Route path="/investors" element={<Investors />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/ethics" element={<Ethics />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
           </Routes>
