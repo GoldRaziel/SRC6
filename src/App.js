@@ -37,6 +37,7 @@ function App() {
               <Link to="/investors" className="nav-button">{t('investors')}</Link>
               <Link to="/gallery" className="nav-button">{t('gallery')}</Link>
               <Link to="/donate" className="nav-button">{t('donate')}</Link>
+              <Link to="/ethics" className="nav-button">{t('ethics')}</Link>
               <Link to="/contact" className="nav-button">{t('contact')}</Link>
             </div>
             <div className="nav-lang">
@@ -56,6 +57,9 @@ function App() {
                 <Link to="/investors" className="nav-button" onClick={() => setMenuOpen(false)}>{t('investors')}</Link>
                 <Link to="/gallery" className="nav-button" onClick={() => setMenuOpen(false)}>{t('gallery')}</Link>
                 <Link to="/donate" className="nav-button" onClick={() => setMenuOpen(false)}>{t('donate')}</Link>
+                <Link to="/ethics" className="nav-button" onClick={() => setMenuOpen(false)}>
+  {t('ethics')}
+</Link>
                 <Link to="/contact" className="nav-button" onClick={() => setMenuOpen(false)}>{t('contact')}</Link>
                 <button className="nav-button" onClick={() => changeLanguage('en')}>EN</button>
                 <button className="nav-button" onClick={() => changeLanguage('it')}>IT</button>
