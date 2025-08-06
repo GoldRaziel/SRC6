@@ -12,21 +12,17 @@ const Donate = () => {
         {t('donate_title')}
       </h1>
 
-      {/* Frase emozionale */}
+      {/* Testo da translation.json con HTML */}
       <p
         style={{
           fontSize: '1.2rem',
           maxWidth: '800px',
           margin: '1.5rem auto',
           lineHeight: '1.8',
+          color: '#ffffff',
         }}
-      >
-        Unisciti a noi nella creazione di un luogo unico al mondo, dove le emozioni
-        del passato tornano a vivere tra musica, arte e tecnologia. Non rimanere
-        spettatore: <strong>entra nella storia di un progetto che farà parlare di sé in tutto il mondo.</strong>
-        <br /><br />
-        Puoi dare il tuo contributo in tutta tranquillità e sicurezza, attraverso il servizio Stripe.
-      </p>
+        dangerouslySetInnerHTML={{ __html: t('donate_text') }}
+      />
 
       {/* Bottone Stripe */}
       <div style={{ marginTop: '2rem' }}>
@@ -40,10 +36,11 @@ const Donate = () => {
               padding: '1rem 2rem',
               fontSize: '1.2rem',
               borderRadius: '8px',
-              backgroundColor: '#6772e5',
-              color: '#fff',
+              backgroundColor: '#00ccff',
+              color: '#000',
               border: 'none',
               cursor: 'pointer',
+              fontWeight: 'bold',
               transition: '0.3s',
             }}
           >
