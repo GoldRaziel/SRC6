@@ -26,7 +26,9 @@ function App() {
   };
 
   return (
-    <div dir={dir} lang={i18n.language}>
+    <Router>
+  <div lang={i18n.language}>
+
       <Router>
         <nav className="navbar">
           {/* DESKTOP MENU */}
