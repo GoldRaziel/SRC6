@@ -5,31 +5,15 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
 }
 
-/* Gestione automatica direzione */
-html[dir="rtl"] {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="ltr"] {
-  direction: ltr;
-  text-align: left;
-}
-
-/* Link standard */
+/* Stile link standard */
 a {
   color: #00ccff;
   text-decoration: none;
 }
 
-a:hover {
-  color: #00aacc;
-}
-
-/* Bottoni generici e NAVBAR */
+/* Bottoni generici + NAVBAR */
 button,
 .nav-button {
   background-color: #00ccff;
@@ -41,24 +25,12 @@ button,
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
+/* Effetto hover */
 button:hover,
 .nav-button:hover {
   background-color: #0099cc;
   color: #fff;
-}
-
-/* Miglioramenti mobile (opzionali) */
-@media (max-width: 768px) {
-  .nav-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  button {
-    width: 100%;
-  }
 }
