@@ -9,10 +9,37 @@ import solQR from '../assets/images/SOL_wallet_qr_resized.png';
 const Donate = () => {
   const { t } = useTranslation();
 
-  // Funzione per copiare wallet negli appunti
-  const copyToClipboard = (wallet) => {
-    navigator.clipboard.writeText(wallet);
-    alert('Indirizzo copiato negli appunti!');
+  // Funzione sicura per copiare negli appunti
+  const copyToClipboard = (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text)
+        .then(() => alert('Indirizzo copiato negli appunti!'))
+        .catch(() => fallbackCopy(text));
+    } else {
+      fallbackCopy(text);
+    }
+  };
+
+  const fallbackCopy = (text) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-1000px';
+    textArea.style.left = '-1000px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      const success = document.execCommand('copy');
+      if (success) {
+        alert('Indirizzo copiato negli appunti!');
+      } else {
+        alert('Errore nella copia. Copia manualmente.');
+      }
+    } catch (err) {
+      alert('Copia non supportata dal browser.');
+    }
+    document.body.removeChild(textArea);
   };
 
   return (
