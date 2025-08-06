@@ -1,21 +1,28 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import logo from '../assets/images/LOGO.png'; // assicurati che il file sia corretto
 
 const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>{t('contact_title')}</h1>
-      <p>{t('contact_text')}</p>
-      <form style={{ marginTop: '1rem' }}>
-        <input type="text" placeholder="Your name" required style={{ padding: '10px', width: '100%', marginBottom: '10px' }} />
-        <input type="email" placeholder="Your email" required style={{ padding: '10px', width: '100%', marginBottom: '10px' }} />
-        <textarea placeholder="Your message" required style={{ padding: '10px', width: '100%', height: '150px' }} />
-        <br />
-        <button type="submit">Send</button>
-      </form>
-      <p style={{ marginTop: '2rem' }}>Email: info.soulrockcafe@gmail.com</p>
+    <div style={{ padding: '2rem', textAlign: 'center' }}>
+      {/* Titolo */}
+      <h1 style={{ color: '#00ccff', fontSize: '2.5rem', marginBottom: '2rem' }}>
+        {t('contact_title')}
+      </h1>
+
+      {/* Email */}
+      <p style={{ fontSize: '1.2rem', color: '#ffffff', marginBottom: '3rem' }}>
+        Scrivici a: <strong>info.soulrockcafe@gmail.com</strong>
+      </p>
+
+      {/* Logo centrato */}
+      <img
+        src={logo}
+        alt="Soul Rock Cafe Logo"
+        style={{ width: '220px', maxWidth: '80%', margin: '0 auto', display: 'block' }}
+      />
     </div>
   );
 };
