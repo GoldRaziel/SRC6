@@ -32,7 +32,7 @@ const Home = () => {
       {/* Pulsanti corretti */}
       <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
         {/* Tasto SCOPRI DI PIÙ collegato alla pagina "Chi siamo" */}
-        <a href="/about">
+        <a href="/idea">
           <button
             style={{
               fontSize: '1.2rem',
