@@ -32,8 +32,9 @@
 "donate_copy_unsupported": "Copy not supported by this browser.",
 "donate_anon_optional": "After donating, you may contact us for a symbolic thank-you. Or remain completely anonymous.",
 
-  "ethics_title": "Ethical Commitment and Donations",
-"ethics_text": "<p style='text-align:justify'>Soul Rock Museum Restaurant is not just a commercial project...</p> [...continua...]",
+"ethics": "Ethics",
+"ethics_title": "Ethical Commitment and Donations",
+"ethics_text": "<p style='text-align:justify'><strong>Soul Rock Museum Restaurant</strong> is not just a commercial project — it’s a vision that aims to leave a real and positive mark on the world.</p><p style='text-align:justify'>For this reason, we are committed to allocating part of the donations received — and later a percentage of our profits — to educational, artistic, or humanitarian initiatives focused on children and youth.</p><p style='text-align:justify'>We are currently evaluating the most suitable charity partner, with strict criteria of <strong>transparency, ethics, and real impact</strong>.</p><p style='text-align:justify'>We do not believe in performative philanthropy. We believe in real value. Once the organization is chosen, we will publish their name here, along with the details of our collaboration — and whenever possible, proof of impact.</p><p style='text-align:justify; margin-top:2rem;'>Those who support <strong>Soul Rock</strong> help build a project with a soul.</p>",
 
   "contact_title": "Contact Us",
   "contact_text": "Write to us at: <strong>info.soulrockcafe@gmail.com</strong>"
