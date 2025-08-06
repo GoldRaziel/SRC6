@@ -20,17 +20,16 @@
   "gallery_title": "Gallery",
   "gallery_text": "Explore our concept through photorealistic images of the <strong style='color:#00ccff'>SOUL ROCK</strong> environment.",
 
- "donate_title": "Support Soul Rock",
-"donate_text": "<strong style='color:#00ccff'>SOUL ROCK</strong> is a unique project that merges music, cinema and iconic design. You can support us by donating via Stripe or anonymously through cryptocurrency. Every contribution helps us bring this immersive dream to life.",
-"crypto_donation_title": "Anonymous crypto donations",
-"crypto_donation_text": "If you prefer to support <strong style='color:#00ccff'>SOUL ROCK</strong> privately or anonymously, you can donate directly via cryptocurrency. No personal data is required, and the transaction is only recorded on the blockchain.",
-"copy_address": "Copy address",
-"copy_success": "Address copied to clipboard!",
-"copy_error": "Copy not supported. Please copy manually.",
-"copy_fallback_error": "Unable to copy. Try again or use a different browser.",
-"post_donation_text": "Once the donation is completed, you can optionally contact us to receive a symbolic thank you. Or remain fully anonymous.",
+  "donate_title": "Support Soul Rock",
+  "donate_text": "<strong style='color:#00ccff'>SOUL ROCK</strong> is a unique project that merges music, cinema and iconic design. You can support us by donating via Stripe or anonymously through cryptocurrency. Every contribution helps us bring this immersive dream to life.",
+  "crypto_donation_title": "Anonymous crypto donations",
+  "crypto_donation_text": "If you prefer to support <strong style='color:#00ccff'>SOUL ROCK</strong> privately or anonymously, you can donate directly via cryptocurrency. No personal data is required, and the transaction is only recorded on the blockchain.",
+  "copy_address": "Copy address",
+  "copy_success": "Address copied to clipboard!",
+  "copy_error": "Copy not supported. Please copy manually.",
+  "copy_fallback_error": "Unable to copy. Try again or use a different browser.",
+  "post_donation_text": "Once the donation is completed, you can optionally contact us to receive a symbolic thank you. Or remain fully anonymous.",
 
   "contact_title": "Contact Us",
-"contact_text": "Write to us at: <strong>info.soulrockcafe@gmail.com</strong>"
-
+  "contact_text": "Write to us at: <strong>info.soulrockcafe@gmail.com</strong>"
 }
