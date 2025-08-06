@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Gallery.css';
+import { useTranslation } from 'react-i18next';
 
 import img1 from '../assets/images/1.Esterno-notte.png';
 import img2 from '../assets/images/2.Reception.png';
@@ -20,11 +21,12 @@ const images = [
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation(); // ✅ Hook per traduzioni
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="gallery-container">
-      <h2 className="gallery-title">Gallery</h2>
+      <h2 className="gallery-title">{t('gallery_title')}</h2> {/* ✅ Titolo multilingua */}
 
       <div className="gallery-grid">
         {images.map((src, index) => (
