@@ -12,13 +12,15 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        user-select: none;
+        user-select: none; /* ✅ Opzionale: impedisce selezione testo */
       }
+
       img {
-        pointer-events: none;
+        pointer-events: auto; /* ✅ Permette clic sinistro */
       }
     </style>
     <script>
+      // ✅ Disabilita solo il tasto destro del mouse
       document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
   </head>
