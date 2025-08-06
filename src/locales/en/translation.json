@@ -28,7 +28,7 @@
 "copy_success": "Address copied to clipboard!",
 "copy_error": "Copy not supported. Please copy manually.",
 "copy_fallback_error": "Unable to copy. Try again or use a different browser.",
-"post_donation_text": "Once the donation is completed, you can optionally contact us to receive a symbolic thank you. Or remain fully anonymous."
+"post_donation_text": "Once the donation is completed, you can optionally contact us to receive a symbolic thank you. Or remain fully anonymous.",
 
   "contact_title": "Contact Us",
 "contact_text": "Write to us at: <strong>info.soulrockcafe@gmail.com</strong>"
