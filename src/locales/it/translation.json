@@ -9,7 +9,7 @@
   "home_title": "Benvenuti al Soul Rock Museum Restaurant",
   "home_text": "Un'esperienza immersiva dove le leggende del cinema e della musica rock tornano a vivere.",
   "home_cta_discover": "Scopri di più",
-  "home_cta_donate": "Dona adesso",
+  "home_cta_donate": "<span style='background-color:#00ccff; color:#000; padding:0.5rem 1rem; border-radius:5px; font-weight:bold;'>Dona ora con Stripe</span>",
 
   "about_title": "Chi siamo",
   "about_text": "Il <strong style='color:#00ccff'>SOUL ROCK</strong> nasce da una passione coltivata anno dopo anno, ispirata dai gloriosi anni ’80 e ’90, dove la musica sapeva toccare l’anima e far venire la pelle d’oca. A questo amore per la musica autentica si unisce quello per la buona cucina e per le rappresentazioni iconiche dei personaggi leggendari del rock e del cinema. Da questo mix nasce il desiderio di trasmettere emozioni vere, riaccendere ricordi che sembravano sopiti e far scoprire a chi non li ha vissuti un mondo irripetibile.<br><br>Durante il mio percorso e i vari test realizzati nei miei ristoranti, ho compreso che non stavo semplicemente offrendo ottimo cibo o buona musica, ma qualcosa di più: emozioni. Emozioni che si accendono grazie a un arredamento suggestivo, popolato da statue in scala reale che riportano in vita miti amati da intere generazioni.<br><br>Ma non mi sono fermato lì. È nata così l’idea di far rivivere anche le voci che vorremmo ancora ascoltare: grazie a una tecnologia avanzatissima, il <strong style='color:#00ccff'>SOUL ROCK</strong> diventa il primo <strong style='color:#00ccff'>MUSEO RISTORANTE</strong> dove ologrammi ad alta definizione di cantanti ormai scomparsi si esibiscono tra i tavoli.<br><br>Ecco perché oggi il <strong style='color:#00ccff'>SOUL ROCK</strong> non è solo un ristorante: è un <strong style='color:#00ccff'>MUSEO RISTORANTE</strong>. Un tempio moderno dell’immaginario collettivo, dove ogni dettaglio è pensato per far battere più forte il cuore.",
@@ -21,7 +21,7 @@
   "gallery_text": "Scopri il nostro concept attraverso immagini fotorealistiche degli ambienti del <strong style='color:#00ccff'>SOUL ROCK</strong>.",
 
   "donate_title": "Sostieni il progetto",
-  "donate_text": "Unisciti a noi nella creazione di un luogo unico dove le emozioni del passato tornano a vivere attraverso musica, arte e tecnologia.<br /><br />Non rimanere spettatore.<br /><br /><strong style='color:#00ccff; font-weight:bold;'>ENTRA NELLA STORIA DI UN PROGETTO CHE FARÀ PARLARE DI SÉ IN TUTTO IL MONDO.</strong><br /><br /><br /><strong style='color:#ffffff;'>Puoi dare il tuo contributo in tutta tranquillità e sicurezza, attraverso il servizio Stripe.</strong>",
+  "donate_text": "Unisciti a noi nella creazione di un luogo unico dove le emozioni del passato tornano a vivere attraverso musica, arte e tecnologia.<br /><br /><strong style='color:#ffffff;'>Non rimanere spettatore.</strong><br /><br /><strong style='color:#00ccff; font-weight:bold;'>ENTRA NELLA STORIA...IL MONDO</strong><br /><br /><br /><strong style='color:#ffffff;'>Puoi dare il tuo contributo in tutta tranquillità e sicurezza, attraverso il servizio Stripe.</strong>",
 
   "contact_title": "Contattaci",
   "contact_text": "Scrivici per informazioni, collaborazioni o supporto al lancio."
