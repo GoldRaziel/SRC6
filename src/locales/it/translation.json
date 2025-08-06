@@ -20,8 +20,16 @@
   "gallery_title": "Galleria",
   "gallery_text": "Scopri il nostro concept attraverso immagini fotorealistiche degli ambienti del <strong style='color:#00ccff'>SOUL ROCK</strong>.",
 
-  "donate_title": "Sostieni il progetto",
-  "donate_text": "Unisciti a noi nella creazione di un luogo unico dove le emozioni del passato tornano a vivere attraverso musica, arte e tecnologia.<br /><br /><strong style='color:#ffffff;'>Non rimanere spettatore</strong><br /><br /><strong style='color:#00ccff; font-weight:bold;'>ENTRA A FAR PARTE DI UN PROGETTO CHE FARÀ PARLARE DI SÉ IN TUTTO IL MONDO</strong><br /><br /><br /><strong style='color:#ffffff;'>Puoi dare il tuo contributo in tutta tranquillità e sicurezza, attraverso il servizio Stripe.</strong>",
+ "donate_title": "Sostienici",
+"donate_text": "Se vuoi aiutare il progetto <strong style='color:#00ccff'>Soul Rock Museum Restaurant</strong>, puoi farlo con una donazione libera. Ogni contributo ci avvicina all'apertura.",
+"donate_button_stripe": "Dona ora con Stripe",
+"donate_crypto_title": "Donazioni anonime in criptovaluta",
+"donate_crypto_text": "Puoi donare in criptovalute come BTC, ETH o SOL, in modo anonimo o decentralizzato.",
+"donate_copy_button": "Copia indirizzo",
+"donate_copy_success": "Indirizzo copiato negli appunti!",
+"donate_copy_error": "Errore nella copia. Copia manualmente.",
+"donate_copy_unsupported": "Copia non supportata dal browser.",
+"donate_anon_optional": "Dopo la donazione puoi scriverci per ricevere un ringraziamento simbolico. Oppure rimanere anonimo.",
 
   "contact_title": "Contattaci",
   "contact_text": "Scrivici per informazioni, collaborazioni o supporto al lancio."
