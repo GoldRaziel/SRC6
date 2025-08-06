@@ -14,7 +14,7 @@ const Contact = () => {
 
       {/* Email */}
       <p style={{ fontSize: '1.2rem', color: '#ffffff', marginBottom: '3rem' }}>
-        Scrivici a: <strong>info.soulrockcafe@gmail.com</strong>
+        info.soulrockcafe@gmail.com</strong>
       </p>
 
       {/* Logo centrato */}
