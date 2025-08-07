@@ -23,6 +23,19 @@ const About = () => {
         }}
         dangerouslySetInnerHTML={{ __html: t('about_text') }}
       />
+{/* Firma visiva Gold Raziel */}
+<img
+  src={require('../assets/images/firma-gold-raziel.png')}
+  alt="Firma Gold Raziel"
+  style={{
+    maxWidth: '240px',
+    marginTop: '2rem',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    opacity: 0.95
+  }}
+/>
 
       {/* Immagine Freddy ologramma */}
       <img
