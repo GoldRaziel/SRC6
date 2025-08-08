@@ -154,6 +154,9 @@ function App() {
           }
         }
       `}</style>
+    <footer className="footer-proof">
+  <small>Protected via Bitcoin — confirmed at block #909015 Aug 7, 2025</small>
+</footer>
     </div>
   );
 }
