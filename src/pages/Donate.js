@@ -107,17 +107,17 @@ const Donate = () => {
             minHeight: 400
           }}
         >
+          {/* TITOLO CON HTML (andare a capo dopo importo) */}
           <h3
             style={{
               color: '#00ccff',
               margin: 0,
               lineHeight: 1.25
             }}
-          >
-            {t('tier1_title')}
-          </h3>
+            dangerouslySetInnerHTML={{ __html: t('tier1_title_html') }}
+          />
 
-          {/* descrizione con HTML (strong, ecc.) */}
+          {/* DESCRIZIONE con HTML (strong, em, colore) */}
           <div
             style={{
               color: '#ffffff',
@@ -128,7 +128,7 @@ const Donate = () => {
             dangerouslySetInnerHTML={{ __html: t('tier1_desc') }}
           />
 
-          {/* CTA blocco in basso */}
+          {/* CTA fissata in basso */}
           <div style={{ marginTop: 'auto' }}>
             <a href={LINK_1USD} target="_blank" rel="noreferrer">
               <button
@@ -215,9 +215,8 @@ const Donate = () => {
               margin: 0,
               lineHeight: 1.25
             }}
-          >
-            {t('tier2_title')}
-          </h3>
+            dangerouslySetInnerHTML={{ __html: t('tier2_title_html') }}
+          />
 
           <div
             style={{
@@ -313,9 +312,8 @@ const Donate = () => {
               margin: 0,
               lineHeight: 1.25
             }}
-          >
-            {t('tier3_title')}
-          </h3>
+            dangerouslySetInnerHTML={{ __html: t('tier3_title_html') }}
+          />
 
           <div
             style={{
