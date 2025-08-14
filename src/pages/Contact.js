@@ -1,29 +1,34 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../assets/images/LOGO.png'; // Assicurati che il file esista
+import logo from '../assets/images/LOGO.png'; // assicurati che il file esista
 
 const Contact = () => {
   const { t } = useTranslation();
 
-  // ✅ Configura qui il numero (senza + e spazi) e il messaggio precompilato
+  // ✅ Numero senza "+" e senza spazi
   const waNumber = '971507146421';
+
+  // ✅ Testo precompilato (puoi tradurlo se vuoi)
   const waText = encodeURIComponent("Hello Soul Rock! I'd like more information.");
+
+  // ✅ Usa l'endpoint più compatibile
+  const waHref = `https://api.whatsapp.com/send?phone=${waNumber}&text=${waText}`;
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center', color: '#eee' }}>
       {/* Titolo */}
       <h1 style={{ color: '#00ccff', fontSize: '2.5rem', marginBottom: '2rem' }}>
-        {t('contact_title')}
+        {t('contact_title', { defaultValue: 'Contact' })}
       </h1>
 
       {/* Email */}
-      <p style={{ fontSize: '1.2rem', color: '#ffffff', marginBottom: '3rem' }}>
+      <p style={{ fontSize: '1.2rem', color: '#ffffff', marginBottom: '2rem' }}>
         info.soulrockcafe@gmail.com
       </p>
 
       {/* WhatsApp CTA */}
       <a
-        href={`https://wa.me/${waNumber}?text=${waText}`}
+        href={waHref}
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -38,18 +43,12 @@ const Contact = () => {
           color: '#00B0F0',
           fontWeight: 600,
           boxShadow: '0 8px 24px rgba(0,176,240,0.15)',
-          marginBottom: '1rem',
+          marginBottom: '0.5rem',
         }}
         aria-label="Chat on WhatsApp"
       >
         {/* Logo WhatsApp (SVG inline) */}
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 32 32"
-          aria-hidden="true"
-          focusable="false"
-        >
+        <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
           <path
             d="M19.11 17.26c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.18.28-.7.89-.86 1.07-.16.18-.32.2-.6.07-.28-.14-1.18-.43-2.25-1.36-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.27.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.46-.16 0-.34-.02-.52-.02s-.48.07-.74.34c-.25.28-.97.95-.97 2.31s1 2.68 1.14 2.86c.14.18 1.97 3 4.77 4.21.67.29 1.19.46 1.6.59.67.21 1.29.18 1.77.11.54-.08 1.63-.66 1.86-1.3.23-.64.23-1.18.16-1.3-.07-.11-.25-.18-.53-.32Z"
             fill="#00B0F0"
@@ -64,20 +63,16 @@ const Contact = () => {
         <span style={{ opacity: 0.85 }}>+{waNumber}</span>
       </a>
 
+      {/* Hint con fallback se manca la chiave i18n */}
       <p style={{ marginTop: '8px', opacity: 0.8, fontSize: '0.95rem' }}>
-        {t('contact_whatsapp_hint') || 'Rispondiamo su WhatsApp tutti i giorni.'}
+        {t('contact_whatsapp_hint', { defaultValue: 'Rispondiamo su WhatsApp tutti i giorni.' })}
       </p>
 
       {/* Logo centrato */}
       <img
         src={logo}
         alt="Soul Rock Cafe Logo"
-        style={{
-          width: '220px',
-          maxWidth: '80%',
-          margin: '2rem auto 0',
-          display: 'block',
-        }}
+        style={{ width: '220px', maxWidth: '80%', margin: '2rem auto 0', display: 'block' }}
       />
     </div>
   );
