@@ -39,65 +39,106 @@ const Donate = () => {
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1 style={{ color: '#00ccff', fontSize: '2.5rem' }}>{t('donate_title')}</h1>
+      {/* TITOLO PRINCIPALE */}
+      <h1 style={{ color: '#00ccff', fontSize: '2.6rem', marginBottom: '0.25rem' }}>
+        {t('legends_title')}
+      </h1>
 
+      {/* SOTTOTITOLO */}
       <p
         style={{
           fontSize: '1.2rem',
-          maxWidth: '800px',
-          margin: '1.5rem auto',
-          lineHeight: '1.8',
+          maxWidth: '850px',
+          margin: '0.5rem auto 1.25rem',
+          lineHeight: '1.7',
           color: '#ffffff',
         }}
-        dangerouslySetInnerHTML={{ __html: t('donate_text') }}
+        dangerouslySetInnerHTML={{ __html: t('legends_subtitle') }}
       />
 
-      {/* BOTTONE STRIPE */}
-      <div style={{ marginTop: '2rem' }}>
-        <a
-          href="https://donate.stripe.com/aFafZi6HZcn76m8fHJfjG01"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button
-            style={{
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
-              borderRadius: '8px',
-              backgroundColor: '#00ccff',
-              color: '#000',
-              border: 'none',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              transition: '0.3s',
-            }}
+      {/* BLOCCO CTA 1€ */}
+      <div
+        style={{
+          background: '#111',
+          border: '1px solid #00ccff33',
+          borderRadius: '14px',
+          padding: '1.5rem',
+          maxWidth: '860px',
+          margin: '1.25rem auto 0',
+          boxShadow: '0 0 18px rgba(0,176,240,0.08)',
+        }}
+      >
+        <p
+          style={{
+            fontSize: '1.05rem',
+            lineHeight: '1.7',
+            color: '#e8f7ff',
+            margin: '0 0 1rem',
+          }}
+          dangerouslySetInnerHTML={{ __html: t('legends_pitch') }}
+        />
+
+        {/* BOTTONE STRIPE */}
+        <div style={{ marginTop: '0.5rem' }}>
+          <a
+            href="https://donate.stripe.com/aFafZi6HZcn76m8fHJfjG01"
+            target="_blank"
+            rel="noreferrer"
           >
-            {t('donate_button_stripe')}
-          </button>
-        </a>
-        <div style={{ marginTop: '1rem' }}>
-          <img
-            src={stripeLogo}
-            alt="Stripe"
-            style={{ width: '120px', margin: '0 auto', display: 'block' }}
-          />
+            <button
+              style={{
+                padding: '1rem 2rem',
+                fontSize: '1.2rem',
+                borderRadius: '10px',
+                backgroundColor: '#00ccff',
+                color: '#000',
+                border: 'none',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                transition: '0.25s',
+              }}
+            >
+              {t('legends_cta_stripe')}
+            </button>
+          </a>
+
+          <div style={{ marginTop: '0.75rem' }}>
+            <img
+              src={stripeLogo}
+              alt="Stripe"
+              style={{ width: '120px', margin: '0 auto', display: 'block', opacity: 0.95 }}
+            />
+          </div>
+
+          {/* Micro copy sotto il bottone */}
+          <p style={{ marginTop: '0.6rem', fontSize: '0.95rem', color: '#bdeaff' }}>
+            {t('legends_cta_note')}
+          </p>
         </div>
       </div>
 
-      {/* CRYPTO TITLE + TEXT */}
-      <h2 style={{ color: '#00ccff', marginTop: '3rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
-        {t('donate_crypto_title')}
+      {/* SEZIONE CRYPTO (OPZIONALE/ALTERNATIVA) */}
+      <h2
+        style={{
+          color: '#00ccff',
+          marginTop: '2.5rem',
+          fontWeight: 'bold',
+          textTransform: 'uppercase',
+          letterSpacing: '0.03em',
+        }}
+      >
+        {t('legends_crypto_title')}
       </h2>
       <p
         style={{
-          fontSize: '1.1rem',
-          maxWidth: '800px',
-          margin: '1rem auto',
-          lineHeight: '1.8',
+          fontSize: '1.05rem',
+          maxWidth: '820px',
+          margin: '0.8rem auto 0',
+          lineHeight: '1.7',
           color: '#ffffff',
         }}
       >
-        {t('donate_crypto_text')}
+        {t('legends_crypto_text')}
       </p>
 
       {/* CRYPTO BLOCKS */}
@@ -107,7 +148,7 @@ const Donate = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
           gap: '2rem',
-          marginTop: '2rem',
+          marginTop: '1.5rem',
         }}
       >
         {/* BTC */}
@@ -177,18 +218,17 @@ const Donate = () => {
         </div>
       </div>
 
-      {/* Testo finale */}
+      {/* Nota finale privacy/riconoscimento */}
       <p
         style={{
-          fontSize: '1rem',
-          maxWidth: '800px',
+          fontSize: '0.98rem',
+          maxWidth: '860px',
           margin: '2rem auto 0',
-          lineHeight: '1.8',
+          lineHeight: '1.7',
           color: '#ffffff',
         }}
-      >
-        {t('donate_anon_optional')}
-      </p>
+        dangerouslySetInnerHTML={{ __html: t('legends_privacy_note') }}
+      />
     </div>
   );
 };
