@@ -1,34 +1,25 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../assets/images/LOGO.png'; // assicurati che il file esista
+import logo from '../assets/images/LOGO.png'; // Assicurati che il file esista
 
 const Contact = () => {
   const { t } = useTranslation();
 
+  // ✅ Configura qui il numero (senza + e spazi) e il messaggio precompilato
+  const waNumber = '971507146421';
+  const waText = encodeURIComponent("Hello Soul Rock! I'd like more information.");
+
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
+    <div style={{ padding: '2rem', textAlign: 'center', color: '#eee' }}>
       {/* Titolo */}
       <h1 style={{ color: '#00ccff', fontSize: '2.5rem', marginBottom: '2rem' }}>
         {t('contact_title')}
       </h1>
 
-      {/* Solo email */}
+      {/* Email */}
       <p style={{ fontSize: '1.2rem', color: '#ffffff', marginBottom: '3rem' }}>
         info.soulrockcafe@gmail.com
       </p>
-
-import React from "react";
-
-const Contact = () => {
-  // ✅ Configura qui il numero (senza + e spazi) e il messaggio precompilato
-  const waNumber = "971507146421"; 
-  const waText = encodeURIComponent("Hello Soul Rock! I'd like more information.");
-
-  return (
-    <div style={{ padding: "2rem", color: "#eee" }}>
-      <h1 style={{ color: "#00B0F0", marginBottom: "1rem" }}>Contact</h1>
-
-      {/* ...altri tuoi contatti (email, form, ecc.) */}
 
       {/* WhatsApp CTA */}
       <a
@@ -36,21 +27,22 @@ const Contact = () => {
         target="_blank"
         rel="noopener noreferrer"
         style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "10px",
-          background: "#111",
-          border: "1px solid #00B0F0",
-          borderRadius: "999px",
-          padding: "10px 16px",
-          textDecoration: "none",
-          color: "#00B0F0",
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '10px',
+          background: '#111',
+          border: '1px solid #00B0F0',
+          borderRadius: '999px',
+          padding: '10px 16px',
+          textDecoration: 'none',
+          color: '#00B0F0',
           fontWeight: 600,
-          boxShadow: "0 8px 24px rgba(0,176,240,0.15)",
+          boxShadow: '0 8px 24px rgba(0,176,240,0.15)',
+          marginBottom: '1rem',
         }}
         aria-label="Chat on WhatsApp"
       >
-        {/* Logo WhatsApp (SVG inline, nessun file aggiuntivo) */}
+        {/* Logo WhatsApp (SVG inline) */}
         <svg
           width="22"
           height="22"
@@ -72,21 +64,20 @@ const Contact = () => {
         <span style={{ opacity: 0.85 }}>+{waNumber}</span>
       </a>
 
-      <p style={{ marginTop: "8px", opacity: 0.8, fontSize: "0.95rem" }}>
-        Rispondiamo su WhatsApp tutti i giorni.
+      <p style={{ marginTop: '8px', opacity: 0.8, fontSize: '0.95rem' }}>
+        {t('contact_whatsapp_hint') || 'Rispondiamo su WhatsApp tutti i giorni.'}
       </p>
-    </div>
-  );
-};
-
-export default Contact;
-
 
       {/* Logo centrato */}
       <img
         src={logo}
         alt="Soul Rock Cafe Logo"
-        style={{ width: '220px', maxWidth: '80%', margin: '0 auto', display: 'block' }}
+        style={{
+          width: '220px',
+          maxWidth: '80%',
+          margin: '2rem auto 0',
+          display: 'block',
+        }}
       />
     </div>
   );
