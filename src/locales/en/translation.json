@@ -21,16 +21,31 @@
   "gallery_title": "Gallery",
   "gallery_text": "Explore our concept through photorealistic images of the <strong style='color:#00ccff'>SOUL ROCK</strong> environment.",
 
-"donate_title": "Support Us",
-"donate_text": "If you'd like to support the <strong style='color:#00ccff'>Soul Rock Museum Restaurant</strong> project, you can make a donation. Every contribution brings us closer to opening.",
-"donate_button_stripe": "Donate with Stripe",
-"donate_crypto_title": "Anonymous Crypto Donations",
-"donate_crypto_text": "You can donate in cryptocurrencies like BTC, ETH or SOL anonymously or in a decentralized way.",
-"donate_copy_button": "Copy address",
-"donate_copy_success": "Address copied to clipboard!",
-"donate_copy_error": "Copy failed. Please copy manually.",
-"donate_copy_unsupported": "Copy not supported by this browser.",
-"donate_anon_optional": "After donating, you may contact us for a symbolic thank-you. Or remain completely anonymous.",
+  
+  "donate": "Your name in Soul Rock",
+
+  "legends_title": "Legends Wall",
+  "legends_sub_fixed": "Your name on our wall",
+  "legends_subtitle_multi": "Choose how to join our <strong style='color:#00ccff'>Legends Wall</strong>:",
+  "tier1_title": "1 USD — Name on the Legends Wall",
+  "tier1_desc": "Your name engraved forever on the Legends Wall (in‑venue and on the website).",
+  "tier2_title": "5 USD — Name + Personalized JPEG",
+  "tier2_desc": "Name on the Legends Wall + a personalized thank‑you JPEG signed by <strong>Gold Raziel</strong> (via email).",
+  "tier3_title": "10 USD — Everything + Lottery Ticket",
+  "tier3_desc": "Everything in the 5 USD tier + a <strong>lottery ticket</strong> to win a <strong>dinner for 2</strong> at SOUL ROCK (1 starter, 1 main, dessert, soft drink or 1 glass of wine, water, coffee + shop gadget + souvenir photo).",
+  "tier_pay_cta": "Join with {{amount}}",
+
+  "legends_cta_note": "Secure payment via Stripe. Wallets (Apple Pay / Google Pay) are shown automatically on supported devices and browsers.",
+
+  "legends_crypto_title": "Alternatively, contribute with crypto",
+  "legends_crypto_text": "If you prefer, use one of the addresses below (BTC, ETH, SOL).",
+
+  "legends_privacy_note_v2": "You can choose to display your name on the Legends Wall or remain anonymous.<br/><strong>Either way, you’ll be part of the story of <span style='color:#00ccff'>Soul Rock</span></strong>.",
+
+  "donate_copy_button": "Copy address",
+  "donate_copy_success": "Address copied!",
+  "donate_copy_error": "Couldn’t copy the address.",
+  "donate_copy_unsupported": "Copy not supported by this browser.",
 
 "ethics": "Ethics",
 "ethics_title": "Ethical Commitment and Donations",
