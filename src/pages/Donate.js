@@ -41,9 +41,9 @@ const Donate = () => {
   // ---------------------------------------------------------------------------
 
   // TODO: sostituisci con i tuoi Stripe Payment Links (1 / 5 / 10 USD)
-  const LINK_1USD = '#PAY_1USD';
-  const LINK_5USD = '#PAY_5USD';
-  const LINK_10USD = '#PAY_10USD';
+ const LINK_1USD = 'https://buy.stripe.com/6oUdRad6nfzjaCogLNfjG02';
+const LINK_5USD = 'https://buy.stripe.com/bJefZi7M3fzj4e00MPfjG03';
+const LINK_10USD = 'https://buy.stripe.com/eVq7sM3vN3QB4e0gLNfjG04';
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
