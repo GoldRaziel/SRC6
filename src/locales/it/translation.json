@@ -21,16 +21,26 @@
   "gallery_title": "Galleria",
   "gallery_text": "Scopri il nostro concept attraverso immagini fotorealistiche degli ambienti del <strong style='color:#00ccff'>SOUL ROCK</strong>.",
 
- "donate": "Your name in Soul Rock",
+
+  "donate": "Unisciti al Soul Rock",
 
   "legends_title": "Legends Wall",
-  "legends_subtitle": "Con <strong style='color:#00ccff'>1€</strong> il tuo nome entra per sempre nel <strong style='color:#00ccff'>SOUL ROCK Museum Restaurant</strong> di Dubai.",
-  "legends_pitch": "<strong style='color:#00ccff'>Come funziona:</strong> contribuisci con 1€ → il tuo nome verrà inciso nel nostro <em>Legends Wall</em> (in loco e sul sito) come <strong>co‑fondatore simbolico</strong> del progetto.",
-  "legends_cta_stripe": "Partecipa con 1€",
-  "legends_cta_note": "Pagamento sicuro con Stripe. Apple Pay / Google Pay disponibili sui dispositivi compatibili.",
+  "legends_sub_fixed": "Il tuo nome sul nostro muro",
+  "legends_subtitle_multi": "Scegli come entrare nel nostro <strong style='color:#00ccff'>Legends Wall</strong>:",
+  "tier1_title": "1 USD — Nome sul Legends Wall",
+  "tier1_desc": "Il tuo nome inciso per sempre sul Legends Wall (in sede e sul sito).",
+  "tier2_title": "5 USD — Nome + JPEG personalizzata",
+  "tier2_desc": "Nome sul Legends Wall + immagine JPEG di ringraziamento personalizzata e firmata da <strong>Gold Raziel</strong> (via email).",
+  "tier3_title": "10 USD — Tutto + Biglietto Lotteria",
+  "tier3_desc": "Tutto del livello da 5 USD + <strong>biglietto lotteria</strong> per l’estrazione di una <strong>cena per 2</strong> gratuita al SOUL ROCK (1 antipasto, 1 portata principale, dolce, bibita o 1 calice di vino, acqua, caffè + gadget dallo Shop + foto ricordo).",
+  "tier_pay_cta": "Partecipa con {{amount}}",
+
+  "legends_cta_note": "Pagamento sicuro con Stripe. I wallet (Apple Pay / Google Pay) vengono mostrati automaticamente sui dispositivi e browser compatibili.",
+
   "legends_crypto_title": "In alternativa, puoi contribuire in crypto",
   "legends_crypto_text": "Se preferisci, usa uno degli indirizzi qui sotto (BTC, ETH, SOL).",
-  "legends_privacy_note": "Puoi scegliere se mostrare il tuo nome sul Legends Wall o restare anonimo. In ogni caso, sarai parte della storia del Soul Rock.",
+
+  "legends_privacy_note_v2": "Puoi scegliere se mostrare il tuo nome sul Legends Wall o restare anonimo.<br/><strong>In ogni caso, sarai parte della storia del <span style='color:#00ccff'>Soul Rock</span></strong>.",
 
   "donate_copy_button": "Copia indirizzo",
   "donate_copy_success": "Indirizzo copiato!",
