@@ -24,15 +24,18 @@
 
   "donate": "Unisciti al Soul Rock",
 
-  "legends_title": "Legends Wall",
+ "legends_title": "Legends Wall",
   "legends_sub_fixed": "Il tuo nome sul nostro muro",
-  "legends_subtitle_multi": "Scegli come entrare nel nostro <strong style='color:#00ccff'>Legends Wall</strong>:",
-  "tier1_title": "1 USD — Nome sul Legends Wall",
-  "tier1_desc": "Il tuo nome inciso per sempre sul Legends Wall (in sede e sul sito).",
-  "tier2_title": "5 USD — Nome + JPEG personalizzata",
-  "tier2_desc": "Nome sul Legends Wall + immagine JPEG di ringraziamento personalizzata e firmata da <strong>Gold Raziel</strong> (via email).",
-  "tier3_title": "10 USD — Tutto + Biglietto Lotteria",
-  "tier3_desc": "Tutto del livello da 5 USD + <strong>biglietto lotteria</strong> per l’estrazione di una <strong>cena per 2</strong> gratuita al SOUL ROCK (1 antipasto, 1 portata principale, dolce, bibita o 1 calice di vino, acqua, caffè + gadget dallo Shop + foto ricordo).",
+  "legends_subtitle_multi": "Scegli come entrare nel nostro <strong style='color:#00ccff'><em>Legends Wall</em></strong>:",
+
+  "tier1_title_html": "1 USD<br/>— Nome sul Legends Wall",
+  "tier2_title_html": "5 USD<br/>— Nome + JPEG personalizzata",
+  "tier3_title_html": "10 USD<br/>— Tutto + Biglietto Lotteria",
+
+  "tier1_desc": "Il tuo nome inciso per sempre sul <strong style='color:#00ccff'><em>Legends Wall</em></strong> (in sede e sul sito).",
+  "tier2_desc": "Nome sul <strong style='color:#00ccff'><em>Legends Wall</em></strong> + immagine JPEG di ringraziamento personalizzata e firmata da <strong style='color:#00ccff'>Gold Raziel</strong> (via email).",
+  "tier3_desc": "Tutto del livello da 5 USD + <strong>biglietto lotteria</strong> per l’estrazione di una <strong>cena per 2</strong> gratuita al SOUL ROCK <span style='opacity:.95'>(antipasto, portata principale, acqua, bibita o calice di vino o birra, dolce, caffè)</span> + <strong style='color:#ffffff'>gadget + foto ricordo</strong>.",
+
   "tier_pay_cta": "Partecipa con {{amount}}",
 
   "legends_cta_note": "Pagamento sicuro con Stripe. I wallet (Apple Pay / Google Pay) vengono mostrati automaticamente sui dispositivi e browser compatibili.",
