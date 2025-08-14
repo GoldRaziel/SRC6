@@ -63,10 +63,6 @@ const Contact = () => {
         <span style={{ opacity: 0.85 }}>+{waNumber}</span>
       </a>
 
-      {/* Hint con fallback se manca la chiave i18n */}
-      <p style={{ marginTop: '8px', opacity: 0.8, fontSize: '0.95rem' }}>
-        {t('contact_whatsapp_hint', { defaultValue: 'Rispondiamo su WhatsApp tutti i giorni.' })}
-      </p>
 
       {/* Logo centrato */}
       <img
