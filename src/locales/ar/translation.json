@@ -26,13 +26,16 @@
 
   "legends_title": "جدار الأساطير",
   "legends_sub_fixed": "اسمك على جدارنا",
-  "legends_subtitle_multi": "اختر طريقتك للانضمام إلى <strong style='color:#00ccff'>جدار الأساطير</strong>:",
-  "tier1_title": "1 USD — الاسم على جدار الأساطير",
-  "tier1_desc": "سيُذكر اسمك للأبد على جدار الأساطير (داخل المكان وعلى الموقع).",
-  "tier2_title": "5 USD — الاسم + صورة شكر مخصصة",
-  "tier2_desc": "اسمك على جدار الأساطير + صورة شكر (JPEG) مخصصة موقعة من <strong>Gold Raziel</strong> (عبر البريد الإلكتروني).",
-  "tier3_title": "10 USD — الكل + تذكرة سحب",
-  "tier3_desc": "كل ما في فئة 5 USD + <strong>تذكرة سحب</strong> لفرصة الفوز بـ <strong>عشاء لشخصين</strong> في SOUL ROCK (مقبلات، طبق رئيسي، حلوى، مشروب غازي أو كأس نبيذ، ماء، قهوة + هدية من المتجر + صورة تذكارية).",
+  "legends_subtitle_multi": "اختر طريقتك للانضمام إلى <strong style='color:#00ccff'><em>جدار الأساطير</em></strong>:",
+
+  "tier1_title_html": "1 USD<br/>— الاسم على جدار الأساطير",
+  "tier2_title_html": "5 USD<br/>— الاسم + صورة شكر مخصصة",
+  "tier3_title_html": "10 USD<br/>— الكل + تذكرة سحب",
+
+  "tier1_desc": "سيُذكر اسمك للأبد على <strong style='color:#00ccff'><em>جدار الأساطير</em></strong> (داخل المكان وعلى الموقع).",
+  "tier2_desc": "اسمك على <strong style='color:#00ccff'><em>جدار الأساطير</em></strong> + صورة شكر (JPEG) مخصصة موقعة من <strong style='color:#00ccff'>Gold Raziel</strong> (عبر البريد الإلكتروني).",
+  "tier3_desc": "كل ما في فئة 5 USD + <strong>تذكرة سحب</strong> لفرصة الفوز بـ <strong>عشاء لشخصين</strong> في SOUL ROCK <span style='opacity:.95'>(مقبلات، طبق رئيسي، ماء، مشروب غازي أو كأس نبيذ أو بيرة، حلوى، قهوة)</span> + <strong style='color:#ffffff'>هدية + صورة تذكارية</strong>.",
+
   "tier_pay_cta": "انضم مقابل {{amount}}",
 
   "legends_cta_note": "دفع آمن عبر Stripe. تُعرض المحافظ (Apple Pay / Google Pay) تلقائيًا على الأجهزة والمتصفحات المدعومة.",
@@ -46,15 +49,6 @@
   "donate_copy_success": "تم نسخ العنوان!",
   "donate_copy_error": "تعذر نسخ العنوان.",
   "donate_copy_unsupported": "النسخ غير مدعوم في هذا المتصفح.",
-
-  "crypto_donation_title": "تبرعات العملات المشفرة المجهولة",
-  "crypto_donation_text": "إذا كنت تفضل دعم <strong style='color:#00ccff'>SOUL ROCK</strong> بشكل خاص أو مجهول، يمكنك التبرع مباشرةً باستخدام العملات المشفرة. لا حاجة لأي بيانات شخصية، والمعاملة تُسجل فقط على البلوكشين.",
-
-  "copy_address": "نسخ العنوان",
-  "copy_success": "تم نسخ العنوان إلى الحافظة!",
-  "copy_error": "النسخ غير مدعوم. يرجى النسخ يدويًا.",
-  "copy_fallback_error": "تعذر النسخ. حاول مرة أخرى أو استخدم متصفحًا مختلفًا.",
-  "post_donation_text": "بعد إتمام التبرع، يمكنك التواصل معنا لتلقي شكر رمزي، أو البقاء مجهولًا تمامًا.",
 
 "ethics": "القيم",
 "ethics_title": "الالتزام الأخلاقي والتبرعات",
