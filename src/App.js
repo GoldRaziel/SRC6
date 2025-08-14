@@ -75,7 +75,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/idea" element={<About />} />
             <Route path="/investors" element={<Investors />} />
-            <Route path="/join" element={<Donate />} />
+            <Route path="/donate" element={<Donate />} />
             <Route path="/ethics" element={<Ethics />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
