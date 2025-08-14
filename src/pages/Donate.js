@@ -49,12 +49,25 @@ const Donate = () => {
         {t('legends_title')}
       </h1>
 
-      {/* SOTTOTITOLO */}
+      {/* SOTTOTITOLO FISSO (azzurro, grassetto) */}
+      <h2
+        style={{
+          color: '#00ccff',
+          fontWeight: 'bold',
+          fontSize: '1.35rem',
+          marginTop: '0.2rem',
+          marginBottom: '0.8rem'
+        }}
+      >
+        {t('legends_sub_fixed')}
+      </h2>
+
+      {/* INTRO OPZIONI */}
       <p
         style={{
           fontSize: '1.2rem',
           maxWidth: '850px',
-          margin: '0.5rem auto 1.25rem',
+          margin: '0.2rem auto 1.25rem',
           lineHeight: '1.7',
           color: '#ffffff',
         }}
