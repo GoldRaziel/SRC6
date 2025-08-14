@@ -9,9 +9,11 @@ import solQR from '../assets/images/SOL_wallet_qr_resized.png';
 const Donate = () => {
   const { t } = useTranslation();
 
+  // --- Clipboard helpers -----------------------------------------------------
   const copyToClipboard = (text) => {
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text)
+      navigator.clipboard
+        .writeText(text)
         .then(() => alert(t('donate_copy_success')))
         .catch(() => fallbackCopy(text));
     } else {
@@ -36,16 +38,24 @@ const Donate = () => {
     }
     document.body.removeChild(textArea);
   };
+  // ---------------------------------------------------------------------------
 
-  // TODO: sostituisci questi URL con i tuoi Payment Links Stripe dedicati ai tre livelli
+  // TODO: sostituisci con i tuoi Stripe Payment Links (1 / 5 / 10 USD)
   const LINK_1USD = '#PAY_1USD';
   const LINK_5USD = '#PAY_5USD';
   const LINK_10USD = '#PAY_10USD';
 
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      {/* TITOLO */}
-      <h1 style={{ color: '#00ccff', fontSize: '2.6rem', marginBottom: '0.25rem' }}>
+      {/* TITOLO PRINCIPALE */}
+      <h1
+        style={{
+          color: '#00ccff',
+          fontSize: '2.6rem',
+          lineHeight: 1.1,
+          marginBottom: '0.25rem'
+        }}
+      >
         {t('legends_title')}
       </h1>
 
@@ -69,220 +79,321 @@ const Donate = () => {
           maxWidth: '850px',
           margin: '0.2rem auto 1.25rem',
           lineHeight: '1.7',
-          color: '#ffffff',
+          color: '#ffffff'
         }}
         dangerouslySetInnerHTML={{ __html: t('legends_subtitle_multi') }}
       />
 
-      {/* CARD LIVELLI */}
+      {/* GRID: 3 colonne con altezza uniforme */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1.2rem',
-          maxWidth: '980px',
-          margin: '1.25rem auto 0',
+          maxWidth: '1080px',
+          margin: '1.25rem auto 0'
         }}
       >
-        {/* 1 USD */}
-        <div style={{
-          background: '#121212',
-          border: '1px solid #00ccff33',
-          borderRadius: '14px',
-          padding: '1.25rem'
-        }}>
-          <h3 style={{ color: '#00ccff', margin: 0 }}>{t('tier1_title')}</h3>
-          <p style={{ color: '#fff', opacity: 0.95, lineHeight: 1.6, minHeight: '72px' }}>
-            {t('tier1_desc')}
-          </p>
-          <a href={LINK_1USD} target="_blank" rel="noreferrer">
-            <button
+        {/* --- CARD 1 USD ----------------------------------------------------- */}
+        <div
+          style={{
+            background: '#141414',
+            border: '1px solid #00ccff40',
+            borderRadius: '14px',
+            padding: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            minHeight: 400
+          }}
+        >
+          <h3
+            style={{
+              color: '#00ccff',
+              margin: 0,
+              lineHeight: 1.25
+            }}
+          >
+            {t('tier1_title')}
+          </h3>
+
+          {/* descrizione con HTML (strong, ecc.) */}
+          <div
+            style={{
+              color: '#ffffff',
+              opacity: 0.95,
+              lineHeight: 1.7,
+              marginTop: '0.7rem'
+            }}
+            dangerouslySetInnerHTML={{ __html: t('tier1_desc') }}
+          />
+
+          {/* CTA blocco in basso */}
+          <div style={{ marginTop: 'auto' }}>
+            <a href={LINK_1USD} target="_blank" rel="noreferrer">
+              <button
+                style={{
+                  width: '100%',
+                  padding: '0.95rem 1rem',
+                  fontSize: '1.05rem',
+                  borderRadius: '10px',
+                  backgroundColor: '#00ccff',
+                  color: '#000',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  marginTop: '1rem'
+                }}
+              >
+                {t('tier_pay_cta', { amount: '1 USD' })}
+              </button>
+            </a>
+
+            {/* shortcut wallet → stesso link Stripe */}
+            <div
               style={{
-                width: '100%',
-                padding: '0.9rem 1rem',
-                fontSize: '1.05rem',
-                borderRadius: '10px',
-                backgroundColor: '#00ccff',
-                color: '#000',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
+                marginTop: '0.65rem',
+                display: 'flex',
+                gap: '0.5rem',
+                justifyContent: 'center',
+                flexWrap: 'wrap'
               }}
             >
-              {t('tier_pay_cta', { amount: '1 USD' })}
-            </button>
-          </a>
-          <div style={{ marginTop: '0.65rem' }}>
-            {/* Pulsanti wallet (stesso link) */}
-            <a href={LINK_1USD} target="_blank" rel="noreferrer"
-              style={{ marginRight: '0.5rem', display: 'inline-block' }}>
-              <button
-                style={{
-                  padding: '0.5rem 0.8rem',
-                  fontSize: '0.95rem',
-                  borderRadius: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                 Pay
-              </button>
-            </a>
-            <a href={LINK_1USD} target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
-              <button
-                style={{
-                  padding: '0.5rem 0.8rem',
-                  fontSize: '0.95rem',
-                  borderRadius: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                Google&nbsp;Pay
-              </button>
-            </a>
+              <a href={LINK_1USD} target="_blank" rel="noreferrer">
+                <button
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Apple Pay
+                </button>
+              </a>
+              <a href={LINK_1USD} target="_blank" rel="noreferrer">
+                <button
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Google&nbsp;Pay
+                </button>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* 5 USD */}
-        <div style={{
-          background: '#141414',
-          border: '1px solid #00ccff66',
-          borderRadius: '14px',
-          padding: '1.25rem',
-          boxShadow: '0 0 20px rgba(0,176,240,0.08)'
-        }}>
-          <h3 style={{ color: '#00ccff', margin: 0 }}>{t('tier2_title')}</h3>
-          <p style={{ color: '#fff', opacity: 0.95, lineHeight: 1.6, minHeight: '72px' }}>
-            {t('tier2_desc')}
-          </p>
-          <a href={LINK_5USD} target="_blank" rel="noreferrer">
-            <button
+        {/* --- CARD 5 USD ----------------------------------------------------- */}
+        <div
+          style={{
+            background: '#141414',
+            border: '1px solid #00ccff66',
+            borderRadius: '14px',
+            padding: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            minHeight: 400,
+            boxShadow: '0 0 20px rgba(0,176,240,0.08)'
+          }}
+        >
+          <h3
+            style={{
+              color: '#00ccff',
+              margin: 0,
+              lineHeight: 1.25
+            }}
+          >
+            {t('tier2_title')}
+          </h3>
+
+          <div
+            style={{
+              color: '#ffffff',
+              opacity: 0.95,
+              lineHeight: 1.7,
+              marginTop: '0.7rem'
+            }}
+            dangerouslySetInnerHTML={{ __html: t('tier2_desc') }}
+          />
+
+          <div style={{ marginTop: 'auto' }}>
+            <a href={LINK_5USD} target="_blank" rel="noreferrer">
+              <button
+                style={{
+                  width: '100%',
+                  padding: '0.95rem 1rem',
+                  fontSize: '1.05rem',
+                  borderRadius: '10px',
+                  backgroundColor: '#00ccff',
+                  color: '#000',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  marginTop: '1rem'
+                }}
+              >
+                {t('tier_pay_cta', { amount: '5 USD' })}
+              </button>
+            </a>
+
+            <div
               style={{
-                width: '100%',
-                padding: '0.9rem 1rem',
-                fontSize: '1.05rem',
-                borderRadius: '10px',
-                backgroundColor: '#00ccff',
-                color: '#000',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
+                marginTop: '0.65rem',
+                display: 'flex',
+                gap: '0.5rem',
+                justifyContent: 'center',
+                flexWrap: 'wrap'
               }}
             >
-              {t('tier_pay_cta', { amount: '5 USD' })}
-            </button>
-          </a>
-          <div style={{ marginTop: '0.65rem' }}>
-            <a href={LINK_5USD} target="_blank" rel="noreferrer"
-              style={{ marginRight: '0.5rem', display: 'inline-block' }}>
-              <button
-                style={{
-                  padding: '0.5rem 0.8rem',
-                  fontSize: '0.95rem',
-                  borderRadius: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                 Pay
-              </button>
-            </a>
-            <a href={LINK_5USD} target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
-              <button
-                style={{
-                  padding: '0.5rem 0.8rem',
-                  fontSize: '0.95rem',
-                  borderRadius: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                Google&nbsp;Pay
-              </button>
-            </a>
+              <a href={LINK_5USD} target="_blank" rel="noreferrer">
+                <button
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Apple Pay
+                </button>
+              </a>
+              <a href={LINK_5USD} target="_blank" rel="noreferrer">
+                <button
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Google&nbsp;Pay
+                </button>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* 10 USD */}
-        <div style={{
-          background: '#121212',
-          border: '1px solid #00ccff33',
-          borderRadius: '14px',
-          padding: '1.25rem'
-        }}>
-          <h3 style={{ color: '#00ccff', margin: 0 }}>{t('tier3_title')}</h3>
-          <p style={{ color: '#fff', opacity: 0.95, lineHeight: 1.6, minHeight: '72px' }}>
-            {t('tier3_desc')}
-          </p>
-          <a href={LINK_10USD} target="_blank" rel="noreferrer">
-            <button
+        {/* --- CARD 10 USD ---------------------------------------------------- */}
+        <div
+          style={{
+            background: '#141414',
+            border: '1px solid #00ccff40',
+            borderRadius: '14px',
+            padding: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            minHeight: 400
+          }}
+        >
+          <h3
+            style={{
+              color: '#00ccff',
+              margin: 0,
+              lineHeight: 1.25
+            }}
+          >
+            {t('tier3_title')}
+          </h3>
+
+          <div
+            style={{
+              color: '#ffffff',
+              opacity: 0.95,
+              lineHeight: 1.7,
+              marginTop: '0.7rem'
+            }}
+            dangerouslySetInnerHTML={{ __html: t('tier3_desc') }}
+          />
+
+          <div style={{ marginTop: 'auto' }}>
+            <a href={LINK_10USD} target="_blank" rel="noreferrer">
+              <button
+                style={{
+                  width: '100%',
+                  padding: '0.95rem 1rem',
+                  fontSize: '1.05rem',
+                  borderRadius: '10px',
+                  backgroundColor: '#00ccff',
+                  color: '#000',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  marginTop: '1rem'
+                }}
+              >
+                {t('tier_pay_cta', { amount: '10 USD' })}
+              </button>
+            </a>
+
+            <div
               style={{
-                width: '100%',
-                padding: '0.9rem 1rem',
-                fontSize: '1.05rem',
-                borderRadius: '10px',
-                backgroundColor: '#00ccff',
-                color: '#000',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
+                marginTop: '0.65rem',
+                display: 'flex',
+                gap: '0.5rem',
+                justifyContent: 'center',
+                flexWrap: 'wrap'
               }}
             >
-              {t('tier_pay_cta', { amount: '10 USD' })}
-            </button>
-          </a>
-          <div style={{ marginTop: '0.65rem' }}>
-            <a href={LINK_10USD} target="_blank" rel="noreferrer"
-              style={{ marginRight: '0.5rem', display: 'inline-block' }}>
-              <button
-                style={{
-                  padding: '0.5rem 0.8rem',
-                  fontSize: '0.95rem',
-                  borderRadius: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                 Pay
-              </button>
-            </a>
-            <a href={LINK_10USD} target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
-              <button
-                style={{
-                  padding: '0.5rem 0.8rem',
-                  fontSize: '0.95rem',
-                  borderRadius: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  fontWeight: 600
-                }}
-              >
-                Google&nbsp;Pay
-              </button>
-            </a>
+              <a href={LINK_10USD} target="_blank" rel="noreferrer">
+                <button
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Apple Pay
+                </button>
+              </a>
+              <a href={LINK_10USD} target="_blank" rel="noreferrer">
+                <button
+                  style={{
+                    padding: '0.5rem 0.9rem',
+                    fontSize: '0.95rem',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    fontWeight: 600
+                  }}
+                >
+                  Google&nbsp;Pay
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Nota sicurezze */}
+      {/* TRUST STRIPE */}
       <div style={{ marginTop: '1rem' }}>
         <img
           src={stripeLogo}
@@ -294,25 +405,26 @@ const Donate = () => {
         </p>
       </div>
 
-      {/* CRYPTO */}
+      {/* SEZIONE CRYPTO */}
       <h2
         style={{
           color: '#00ccff',
           marginTop: '2.5rem',
           fontWeight: 'bold',
           textTransform: 'uppercase',
-          letterSpacing: '0.03em',
+          letterSpacing: '0.03em'
         }}
       >
         {t('legends_crypto_title')}
       </h2>
+
       <p
         style={{
           fontSize: '1.05rem',
           maxWidth: '820px',
           margin: '0.8rem auto 0',
           lineHeight: '1.7',
-          color: '#ffffff',
+          color: '#ffffff'
         }}
       >
         {t('legends_crypto_text')}
@@ -324,7 +436,7 @@ const Donate = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
           gap: '2rem',
-          marginTop: '1.5rem',
+          marginTop: '1.5rem'
         }}
       >
         {/* BTC */}
@@ -342,7 +454,7 @@ const Donate = () => {
               color: '#000',
               border: 'none',
               cursor: 'pointer',
-              fontWeight: 'bold',
+              fontWeight: 'bold'
             }}
           >
             {t('donate_copy_button')}
@@ -364,7 +476,7 @@ const Donate = () => {
               color: '#000',
               border: 'none',
               cursor: 'pointer',
-              fontWeight: 'bold',
+              fontWeight: 'bold'
             }}
           >
             {t('donate_copy_button')}
@@ -386,7 +498,7 @@ const Donate = () => {
               color: '#000',
               border: 'none',
               cursor: 'pointer',
-              fontWeight: 'bold',
+              fontWeight: 'bold'
             }}
           >
             {t('donate_copy_button')}
@@ -401,7 +513,7 @@ const Donate = () => {
           maxWidth: '860px',
           margin: '2rem auto 0',
           lineHeight: '1.7',
-          color: '#ffffff',
+          color: '#ffffff'
         }}
         dangerouslySetInnerHTML={{ __html: t('legends_privacy_note_v2') }}
       />
