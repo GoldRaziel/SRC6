@@ -21,16 +21,22 @@
   "gallery_title": "Galleria",
   "gallery_text": "Scopri il nostro concept attraverso immagini fotorealistiche degli ambienti del <strong style='color:#00ccff'>SOUL ROCK</strong>.",
 
- "donate_title": "Sostienici",
-"donate_text": "Se vuoi aiutare il progetto <strong style='color:#00ccff'>Soul Rock Museum Restaurant</strong>, puoi farlo con una donazione libera. Ogni contributo ci avvicina all'apertura.",
-"donate_button_stripe": "Dona ora con Stripe",
-"donate_crypto_title": "Donazioni anonime in criptovaluta",
-"donate_crypto_text": "Puoi donare in criptovalute come BTC, ETH o SOL, in modo anonimo o decentralizzato.",
-"donate_copy_button": "Copia indirizzo",
-"donate_copy_success": "Indirizzo copiato negli appunti!",
-"donate_copy_error": "Errore nella copia. Copia manualmente.",
-"donate_copy_unsupported": "Copia non supportata dal browser.",
-"donate_anon_optional": "Dopo la donazione puoi scriverci per ricevere un ringraziamento simbolico. Oppure rimanere anonimo.",
+ "donate": "Your name in Soul Rock",
+
+  "legends_title": "Legends Wall",
+  "legends_subtitle": "Con <strong style='color:#00ccff'>1€</strong> il tuo nome entra per sempre nel <strong style='color:#00ccff'>SOUL ROCK Museum Restaurant</strong> di Dubai.",
+  "legends_pitch": "<strong style='color:#00ccff'>Come funziona:</strong> contribuisci con 1€ → il tuo nome verrà inciso nel nostro <em>Legends Wall</em> (in loco e sul sito) come <strong>co‑fondatore simbolico</strong> del progetto.",
+  "legends_cta_stripe": "Partecipa con 1€",
+  "legends_cta_note": "Pagamento sicuro con Stripe. Apple Pay / Google Pay disponibili sui dispositivi compatibili.",
+  "legends_crypto_title": "In alternativa, puoi contribuire in crypto",
+  "legends_crypto_text": "Se preferisci, usa uno degli indirizzi qui sotto (BTC, ETH, SOL).",
+  "legends_privacy_note": "Puoi scegliere se mostrare il tuo nome sul Legends Wall o restare anonimo. In ogni caso, sarai parte della storia del Soul Rock.",
+
+  "donate_copy_button": "Copia indirizzo",
+  "donate_copy_success": "Indirizzo copiato!",
+  "donate_copy_error": "Impossibile copiare l’indirizzo.",
+  "donate_copy_unsupported": "Copia non supportata dal browser.",
+
 
 "ethics": "Etica",
 "ethics_title": "Impegno Etico e Donazioni",
